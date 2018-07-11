@@ -1,7 +1,12 @@
+# See https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+export XDG_DATA_HOME=${HOME}/.local/share
+export XDG_CONFIG_HOME=${HOME}/.config
+export XDG_CACHE_HOME=${HOME}/.cache
+
 export CLICOLOR=1
 
 autoload -U compinit
-compinit
+compinit -d ${XDG_CACHE_HOME}/.zcompdump
 
 setopt prompt_subst
 
@@ -22,14 +27,14 @@ export PATH=${PATH}:$(go env GOPATH)/bin
 #==============================================================================
 # Rust
 #==============================================================================
-export GOPATH=${HOME}/Code/go
 export PATH="${HOME}/.cargo/bin:${PATH}"
 
 
 #==============================================================================
 # zplug
 #==============================================================================
-source ~/.zplug/init.zsh
+export ZPLUG_HOME=${XDG_DATA_HOME}/zplug
+source ${ZPLUG_HOME}/init.zsh
 
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
