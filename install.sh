@@ -13,6 +13,7 @@ if [ ! -e ${dein_dir} ]; then
 fi
 
 mkdir -p ${HOME}/.config
+ln -s ${ROOT}/.zshenv ${HOME}/
 ln -s ${ROOT}/.config/zsh ${HOME}/.config/
 ln -s ${ROOT}/.hyper.js ${HOME}/
 ln -s ${ROOT}/.config/nvim ${HOME}/.config/
