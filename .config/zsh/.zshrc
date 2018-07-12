@@ -16,7 +16,10 @@ setopt prompt_subst
 export PATH="${HOME}/.bin:${PATH}"
 export PATH="/usr/local/sbin:${PATH}"
 # Use coreutils
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:${PATH}"
+# equivalent to export PATH="$(brew --prefix coreutils)/libexec/gnubin:${PATH}"
+if [ -e /usr/local/opt/coreutils ]; then
+  export PATH="/usr/local/opt/coreutils/libexec/gnubin:${PATH}"
+fi
 
 #==============================================================================
 # Go
