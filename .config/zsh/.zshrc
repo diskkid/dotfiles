@@ -42,7 +42,7 @@ source ${ZPLUG_HOME}/init.zsh
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
 
-zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, as:theme
+zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, as:theme
 SPACESHIP_PROMPT_ORDER=(
   time          # Time stampts section
   user          # Username section
