@@ -3,35 +3,30 @@ export XDG_DATA_HOME=${HOME}/.local/share
 export XDG_CONFIG_HOME=${HOME}/.config
 export XDG_CACHE_HOME=${HOME}/.cache
 
+# For coloring macOS ls
 export CLICOLOR=1
-
-autoload -U compinit
-compinit -d ${XDG_CACHE_HOME}/.zcompdump
-
-setopt prompt_subst
 
 #==============================================================================
 # PATH
 #==============================================================================
-export PATH="${HOME}/.bin:${PATH}"
-export PATH="/usr/local/sbin:${PATH}"
+PATH="${HOME}/.bin:${PATH}"
+PATH="/usr/local/sbin:${PATH}"
 # Use coreutils
 # equivalent to export PATH="$(brew --prefix coreutils)/libexec/gnubin:${PATH}"
 if [ -e /usr/local/opt/coreutils ]; then
-  export PATH="/usr/local/opt/coreutils/libexec/gnubin:${PATH}"
+  PATH="/usr/local/opt/coreutils/libexec/gnubin:${PATH}"
 fi
 
 #==============================================================================
 # Go
 #==============================================================================
 export GOPATH=${HOME}/Code/go
-export PATH=${PATH}:$(go env GOPATH)/bin
+PATH=${PATH}:$(go env GOPATH)/bin
 
 #==============================================================================
 # Rust
 #==============================================================================
-export PATH="${HOME}/.cargo/bin:${PATH}"
-
+PATH="${HOME}/.cargo/bin:${PATH}"
 
 #==============================================================================
 # zplug
@@ -102,7 +97,7 @@ eval "$(rbenv init -)"
 if [ -e /usr/local/opt/nvm ]; then
   export NVM_DIR="$XDG_DATA_HOME/nvm"
   nvm_default_version="v$(cat "${NVM_DIR}/alias/default")"
-  export PATH="${NVM_DIR}/versions/node/${nvm_default_version}/bin:${PATH}"
+  PATH="${NVM_DIR}/versions/node/${nvm_default_version}/bin:${PATH}"
   export MANPATH="${NVM_DIR}/versions/node/${nvm_default_version}/share/man:${MANPATH}"
   export NODE_PATH="${NVM_DIR}/versions/node/${nvm_default_version}/lib/node_modules"
   nvm () { # for lazy loading
@@ -120,3 +115,10 @@ export VISUAL=/usr/local/bin/nvim
 export EDITOR=/usr/local/bin/nvim
 alias vi=nvim
 alias vim=nvim
+
+if (which zprof > /dev/null 2>&1) ;then
+  zprof
+fi
+
+# Export
+export PATH
