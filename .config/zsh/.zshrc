@@ -94,13 +94,24 @@ eval "$(rbenv init -)"
 #==============================================================================
 # OPAM configuration
 #==============================================================================
-. /Users/cuckookettle/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+. ${HOME}/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 #==============================================================================
 # nvm
 #==============================================================================
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+if [ -e /usr/local/opt/nvm ]; then
+  export NVM_DIR="$XDG_DATA_HOME/nvm"
+  nvm_default_version="v$(cat "${NVM_DIR}/alias/default")"
+  export PATH="${NVM_DIR}/versions/node/${nvm_default_version}/bin:${PATH}"
+  export MANPATH="${NVM_DIR}/versions/node/${nvm_default_version}/share/man:${MANPATH}"
+  export NODE_PATH="${NVM_DIR}/versions/node/${nvm_default_version}/lib/node_modules"
+  nvm () { # for lazy loading
+    unset -f nvm
+    source "/usr/local/opt/nvm/nvm.sh"
+
+    nvm "$@"
+  }
+fi
 
 #==============================================================================
 # Editor
