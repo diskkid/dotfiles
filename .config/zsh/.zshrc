@@ -111,6 +111,20 @@ if [ -e /usr/local/opt/nvm ]; then
 fi
 
 #==============================================================================
+# zsh options
+#==============================================================================
+
+setopt hist_ignore_all_dups
+setopt hist_reduce_blanks
+setopt hist_no_store
+setopt share_history
+mkdir -p ${XDG_CACHE_HOME}/zsh
+HISTFILE=${XDG_CACHE_HOME}/zsh/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+touch $HISTFILE
+
+#==============================================================================
 # Editor
 #==============================================================================
 export VISUAL=/usr/local/bin/nvim
@@ -118,6 +132,7 @@ export EDITOR=/usr/local/bin/nvim
 alias vi=nvim
 alias vim=nvim
 
+# Performance measurement
 if (which zprof > /dev/null 2>&1) ;then
   zprof
 fi
