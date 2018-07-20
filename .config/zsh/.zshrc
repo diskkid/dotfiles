@@ -124,6 +124,15 @@ HISTSIZE=10000
 SAVEHIST=10000
 touch $HISTFILE
 
+function select_history () {
+  BUFFER=$(history -nr | peco --query "$LBUFFER")
+  CURSOR=$#BUFFER
+  zle -Rc
+}
+
+zle -N select_history
+bindkey '^R' select_history
+
 #==============================================================================
 # Editor
 #==============================================================================
