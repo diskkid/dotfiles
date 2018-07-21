@@ -36,6 +36,12 @@ set number
 set ruler
 set backspace=indent,eol,start
 
+" Autocmd
+au BufReadPost *
+  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal g`\"" |
+  \ endif
+
 " Rust
 au FileType rust nmap gd <Plug>(rust-def)
 au FileType rust nmap gs <Plug>(rust-def-split)
