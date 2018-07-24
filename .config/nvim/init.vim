@@ -9,6 +9,7 @@ if dein#load_state('~/.local/share/dein')
     call dein#add('~/.local/share/dein')
 
     call dein#load_toml('~/.config/nvim/dein/sync.toml')
+    call dein#load_toml('~/.config/nvim/dein/elm.toml', {'on_ft': 'elm'})
   call dein#end()
 
   if dein#check_install()

@@ -1,0 +1,2 @@
+[[plugins]]
+repo = 'elmcast/elm-vim'
