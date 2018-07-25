@@ -43,6 +43,10 @@ au BufReadPost *
   \   exe "normal g`\"" |
   \ endif
 
+" Key mapping
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <Leader>e :edit %%
+
 " Rust
 au FileType rust nmap gd <Plug>(rust-def)
 au FileType rust nmap gs <Plug>(rust-def-split)
