@@ -47,6 +47,9 @@ au BufReadPost *
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <Leader>e :edit %%
 
+" Terminal
+tnoremap <ESC> <C-\><C-n>
+
 " Rust
 au FileType rust nmap gd <Plug>(rust-def)
 au FileType rust nmap gs <Plug>(rust-def-split)
