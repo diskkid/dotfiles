@@ -12,6 +12,7 @@ if dein#load_state('~/.local/share/dein')
     call dein#load_toml('~/.config/nvim/dein/sync.toml')
     call dein#load_toml('~/.config/nvim/dein/elm.toml', {'on_ft': 'elm'})
     call dein#load_toml('~/.config/nvim/dein/slim.toml', {'on_ft': 'slim'})
+    call dein#load_toml('~/.config/nvim/dein/js.toml', {'on_ft': 'javascript'})
   call dein#end()
 
   if dein#check_install()
