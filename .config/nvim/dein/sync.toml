@@ -3,9 +3,22 @@ repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'vim-syntastic/syntastic'
+hook_post_source = '''
+  set statusline+=%#warningmsg#
+  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%*
+
+  let g:syntastic_always_populate_loc_list = 1
+  let g:syntastic_auto_loc_list = 1
+  let g:syntastic_check_on_open = 1
+  let g:syntastic_check_on_wq = 0
+'''
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
+
+[[plugins]]
+repo = 'majutsushi/tagbar'
 
 [[plugins]] # Theme
 repo = 'ayu-theme/ayu-vim'

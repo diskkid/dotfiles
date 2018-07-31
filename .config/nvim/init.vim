@@ -50,6 +50,7 @@ au BufReadPost *
 " Key mapping
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <Leader>e :edit %%
+nmap <F8> :TagbarToggle<CR>
 
 " Terminal
 tnoremap <ESC> <C-\><C-n>
