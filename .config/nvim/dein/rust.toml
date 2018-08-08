@@ -3,3 +3,6 @@ repo = 'rust-lang/rust.vim'
 hook_post_source = '''
   let g:rustfmt_autosave = 1
 '''
+
+[[plugins]]
+repo = 'racer-rust/vim-racer'
