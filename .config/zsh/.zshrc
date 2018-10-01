@@ -15,6 +15,7 @@ PATH="/usr/local/sbin:${PATH}"
 # equivalent to export PATH="$(brew --prefix coreutils)/libexec/gnubin:${PATH}"
 if [ -e /usr/local/opt/coreutils ]; then
   PATH="/usr/local/opt/coreutils/libexec/gnubin:${PATH}"
+  MANPATH="/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}"
 fi
 
 #==============================================================================
