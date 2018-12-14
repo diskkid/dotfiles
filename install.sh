@@ -15,6 +15,5 @@ fi
 mkdir -p ${HOME}/.config
 ln -s ${ROOT}/.zshenv ${HOME}/
 ln -s ${ROOT}/.config/zsh ${HOME}/.config/
-ln -s ${ROOT}/.hyper.js ${HOME}/
 ln -s ${ROOT}/.config/nvim ${HOME}/.config/
 ln -s ${ROOT}/.config/git ${HOME}/.config/
