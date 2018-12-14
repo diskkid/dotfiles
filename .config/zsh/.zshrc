@@ -137,10 +137,12 @@ bindkey '^R' select_history
 #==============================================================================
 # Editor
 #==============================================================================
-export VISUAL=/usr/local/bin/nvim
-export EDITOR=/usr/local/bin/nvim
-alias vi=nvim
-alias vim=nvim
+if type nvim > /dev/null 2>&1; then
+  export VISUAL=$(which nvim)
+  export EDITOR=$VISUAL
+  alias vi=nvim
+  alias vim=nvim
+fi
 
 # Performance measurement
 if (which zprof > /dev/null 2>&1) ;then
