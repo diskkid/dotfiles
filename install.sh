@@ -16,6 +16,13 @@ install_dein () {
   fi
 }
 
+install_nodenv () {
+  local nodenv_dir=${HOME}/.local/share/nodenv
+  if [ ! -e ${nodenv_dir} ]; then
+    git clone https://github.com/nodenv/nodenv.git ${zplug_dir}
+  fi
+}
+
 ln_if_not_exist () {
   if [ ! -e "$2" ]; then
     ln -s "$1" "$2"
@@ -32,4 +39,5 @@ deploy_config () {
 
 install_zplug
 install_dein
+install_nodenv
 deploy_config
