@@ -19,7 +19,7 @@ install_dein () {
 install_nodenv () {
   local nodenv_dir=${HOME}/.local/share/nodenv
   if [ ! -e ${nodenv_dir} ]; then
-    git clone https://github.com/nodenv/nodenv.git ${zplug_dir}
+    git clone https://github.com/nodenv/nodenv.git ${nodenv_dir}
   fi
 }
 
