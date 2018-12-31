@@ -141,6 +141,14 @@ if type nvim > /dev/null 2>&1; then
   alias vim=nvim
 fi
 
+#==============================================================================
+# aliases
+#==============================================================================
+ls --color=auto > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+  alias ls='ls --color=auto'
+fi
+
 # Performance measurement
 if (which zprof > /dev/null 2>&1) ;then
   zprof
