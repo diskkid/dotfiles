@@ -17,6 +17,7 @@ if dein#load_state('~/.local/share/dein')
     call dein#load_toml('~/.config/nvim/dein/rust.toml', {'on_ft': 'rust'})
     call dein#load_toml('~/.config/nvim/dein/elixir.toml', {'on_ft': 'elixir'})
     call dein#load_toml('~/.config/nvim/dein/ruby.toml', {'on_ft': 'ruby'})
+    call dein#load_toml('~/.config/nvim/dein/go.toml', {'on_ft': 'go'})
   call dein#end()
 
   if dein#check_install()
