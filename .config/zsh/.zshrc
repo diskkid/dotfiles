@@ -103,8 +103,9 @@ fi
 #==============================================================================
 # nodenv
 #==============================================================================
-if [ -e "${XDG_DATA_HOME}/nodenv" ]; then
-  PATH="${XDG_DATA_HOME}/nodenv/bin:${PATH}"
+export NODENV_ROOT="${XDG_DATA_HOME}/nodenv"
+if [ -e "$NODENV_ROOT" ]; then
+  PATH="${NODENV_ROOT}/bin:${PATH}"
   eval "$(nodenv init -)"
 fi
 

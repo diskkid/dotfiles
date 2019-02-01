@@ -23,6 +23,15 @@ install_nodenv () {
   fi
 }
 
+install_node_build () {
+  local plugins_dir=${HOME}/.local/share/nodenv/plugins
+  mkdir -p $plugins_dir
+  local node_build_dir=${plugins_dir}/node-build
+  if [ ! -e ${node_build_dir} ]; then
+    git clone https://github.com/nodenv/node-build.git ${node_build_dir}
+  fi
+}
+
 ln_if_not_exist () {
   if [ ! -e "$2" ]; then
     ln -s "$1" "$2"
@@ -40,4 +49,5 @@ deploy_config () {
 install_zplug
 install_dein
 install_nodenv
+install_node_build
 deploy_config
