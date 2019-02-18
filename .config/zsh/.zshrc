@@ -90,8 +90,9 @@ zplug load
 #==============================================================================
 # rbenv
 #==============================================================================
-which rbenv > /dev/null
-if [ $? -eq 0 ]; then
+export RBENV_ROOT="$XDG_DATA_HOME/rbenv"
+if [ -e "$RBENV_ROOT" ]; then
+  PATH="${RBENV_ROOT}/bin:${PATH}"
   eval "$(rbenv init -)"
 fi
 
