@@ -24,11 +24,9 @@ install_rbenv () {
 }
 
 install_ruby_build () {
-  local plugins_dir=${HOME}/.local/share/rbenv/plugins
-  mkdir -p $plugins_dir
-  local ruby_build_dir=${plugins_dir}/ruby-build
-  if [ ! -e ${ruby_build_dir} ]; then
-    git clone https://github.com/rbenv/ruby-build.git ${ruby_build_dir}
+  local plugin_dir=${HOME}/.local/share/rbenv/plugins/ruby-build
+  if [ ! -e ${plugin_dir} ]; then
+    git clone https://github.com/rbenv/ruby-build.git ${plugin_dir}
   fi
 }
 
@@ -40,11 +38,9 @@ install_nodenv () {
 }
 
 install_node_build () {
-  local plugins_dir=${HOME}/.local/share/nodenv/plugins
-  mkdir -p $plugins_dir
-  local node_build_dir=${plugins_dir}/node-build
-  if [ ! -e ${node_build_dir} ]; then
-    git clone https://github.com/nodenv/node-build.git ${node_build_dir}
+  local plugin_dir=${HOME}/.local/share/nodenv/plugins/node-build
+  if [ ! -e ${plugin_dir} ]; then
+    git clone https://github.com/nodenv/node-build.git ${plugin_dir}
   fi
 }
 
