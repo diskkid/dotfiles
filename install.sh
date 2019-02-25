@@ -2,53 +2,58 @@
 
 ROOT="$(cd $(dirname $0); pwd)"
 
-install_zplug () {
-  local zplug_dir=${HOME}/.local/share/zplug
-  if [ ! -e ${zplug_dir} ]; then
-    git clone https://github.com/zplug/zplug ${zplug_dir}
+install_latest() {
+  local src_url="$1"
+  local dest_dir="$2"
+
+  if [[ -e "$dest_dir" ]]; then
+    cd $dest_dir
+    git pull
+  else
+    git clone "$src_url" "$dest_dir"
   fi
+}
+
+install_zplug () {
+  install_latest \
+    https://github.com/zplug/zplug \
+    ${HOME}/.local/share/zplug
 }
 
 install_dein () {
-  local dein_dir=${HOME}/.local/share/dein/repos/github.com/Shougo/dein.vim
-  if [ ! -e ${dein_dir} ]; then
-    git clone https://github.com/Shougo/dein.vim.git ${dein_dir}
-  fi
+  install_latest \
+    https://github.com/Shougo/dein.vim.git \
+    ${HOME}/.local/share/dein/repos/github.com/Shougo/dein.vim
 }
 
 install_rbenv () {
-  local rbenv_dir=${HOME}/.local/share/rbenv
-  if [ ! -e ${rbenv_dir} ]; then
-    git clone https://github.com/rbenv/rbenv.git ${rbenv_dir}
-  fi
+  install_latest \
+    https://github.com/rbenv/rbenv.git \
+    ${HOME}/.local/share/rbenv
 }
 
 install_ruby_build () {
-  local plugin_dir=${HOME}/.local/share/rbenv/plugins/ruby-build
-  if [ ! -e ${plugin_dir} ]; then
-    git clone https://github.com/rbenv/ruby-build.git ${plugin_dir}
-  fi
+  install_latest \
+    https://github.com/rbenv/ruby-build.git \
+    ${HOME}/.local/share/rbenv/plugins/ruby-build
 }
 
 install_nodenv () {
-  local nodenv_dir=${HOME}/.local/share/nodenv
-  if [ ! -e ${nodenv_dir} ]; then
-    git clone https://github.com/nodenv/nodenv.git ${nodenv_dir}
-  fi
+  install_latest \
+    https://github.com/nodenv/nodenv.git \
+    ${HOME}/.local/share/nodenv
 }
 
 install_node_build () {
-  local plugin_dir=${HOME}/.local/share/nodenv/plugins/node-build
-  if [ ! -e ${plugin_dir} ]; then
-    git clone https://github.com/nodenv/node-build.git ${plugin_dir}
-  fi
+  install_latest \
+    https://github.com/nodenv/node-build.git \
+    ${HOME}/.local/share/nodenv/plugins/node-build
 }
 
 install_jetbrains_npm () {
-  local plugin_dir=${HOME}/.local/share/nodenv/plugins/jetbrains-npm
-  if [ ! -e ${plugin_dir} ]; then
-    git clone https://github.com/nodenv/jetbrains-npm.git ${plugin_dir}
-  fi
+  install_latest \
+    https://github.com/nodenv/jetbrains-npm.git \
+    ${HOME}/.local/share/nodenv/plugins/jetbrains-npm
 }
 
 ln_if_not_exist () {
