@@ -125,7 +125,7 @@ SAVEHIST=10000
 touch $HISTFILE
 
 function select_history () {
-  BUFFER=$(history -nr | peco --query "$LBUFFER")
+  BUFFER=$(history -nr 1 -1 | peco --query "$LBUFFER")
   CURSOR=$#BUFFER
   zle -Rc
 }
