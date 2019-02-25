@@ -48,6 +48,13 @@ install_node_build () {
   fi
 }
 
+install_jetbrains_npm () {
+  local plugin_dir=${HOME}/.local/share/nodenv/plugins/jetbrains-npm
+  if [ ! -e ${plugin_dir} ]; then
+    git clone https://github.com/nodenv/jetbrains-npm.git ${plugin_dir}
+  fi
+}
+
 ln_if_not_exist () {
   if [ -e "$2" ]; then
     echo "$2 already exists."
@@ -70,4 +77,5 @@ install_rbenv
 install_ruby_build
 install_nodenv
 install_node_build
+install_jetbrains_npm
 deploy_config
