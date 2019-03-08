@@ -53,7 +53,7 @@ install_node_build () {
 install_jetbrains_npm () {
   install_latest \
     https://github.com/nodenv/jetbrains-npm.git \
-    ${HOME}/.local/share/nodenv/plugins/jetbrains-npm
+    ${HOME}/.local/share/nodenv/lib/node_modules/npm
 }
 
 ln_if_not_exist () {
