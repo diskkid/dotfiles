@@ -1,0 +1,29 @@
+{
+    "telemetry.enableTelemetry": false,
+    "editor.fontFamily": "'HackGen-Regular', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "window.zoomLevel": 1,
+    "files.exclude": {
+        ".vscode": true
+    },
+    "editor.formatOnSave": true,
+    "rust.unstable_features": true,
+    "workbench.colorTheme": "Ayu Dark",
+    "workbench.iconTheme": "ayu",
+    "editor.minimap.enabled": false,
+    "workbench.colorCustomizations": {
+        "[Ayu Dark]": {
+            "foreground": "#999",
+            "activityBar.foreground": "#999",
+            "sideBar.foreground": "#999",
+            "sideBarTitle.foreground": "#999",
+            "sideBarSectionHeader.foreground": "#999",
+            "tab.activeForeground": "#fff",
+            "tab.inactiveForeground": "#999",
+            "list.activeSelectionForeground": "#fff",
+            "list.inactiveSelectionForeground": "#fff",
+            "list.hoverForeground": "#fff",
+            "statusBar.foreground": "#999",
+        }
+    },
+    "terminal.integrated.fontFamily": "'HackGen Console for Powerline'"
+}

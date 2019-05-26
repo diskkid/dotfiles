@@ -70,6 +70,7 @@ deploy_config () {
   ln_if_not_exist ${ROOT}/.config/zsh ${HOME}/.config/zsh
   ln_if_not_exist ${ROOT}/.config/nvim ${HOME}/.config/nvim
   ln_if_not_exist ${ROOT}/.config/git ${HOME}/.config/git
+  ln_if_not_exist ${ROOT}/.config/Code/User/settings.json ${HOME}/.config/Code/User/settings.json
 }
 
 install_zplug
