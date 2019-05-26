@@ -9,7 +9,7 @@ export CLICOLOR=1
 #==============================================================================
 # PATH
 #==============================================================================
-PATH="${HOME}/.bin:${PATH}"
+PATH="${HOME}/.bin:${HOME}/.local/bin:${PATH}"
 PATH="/usr/local/sbin:${PATH}"
 # Use coreutils
 # equivalent to export PATH="$(brew --prefix coreutils)/libexec/gnubin:${PATH}"
