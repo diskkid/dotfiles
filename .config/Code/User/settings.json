@@ -25,5 +25,8 @@
             "statusBar.foreground": "#999",
         }
     },
-    "terminal.integrated.fontFamily": "'HackGen Console for Powerline'"
+    "terminal.integrated.fontFamily": "'HackGen Console for Powerline'",
+    "C_Cpp.clang_format_style": "{BreakBeforeBraces: Attach, IndentWidth: 4}",
+    "C_Cpp.clang_format_fallbackStyle": "LLVM",
+    "editor.parameterHints.enabled": false
 }
