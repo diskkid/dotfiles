@@ -71,6 +71,7 @@ deploy_config () {
   ln_if_not_exist ${ROOT}/.config/nvim ${HOME}/.config/nvim
   ln_if_not_exist ${ROOT}/.config/git ${HOME}/.config/git
   ln_if_not_exist ${ROOT}/.config/polybar ${HOME}/.config/polybar
+  ln_if_not_exist ${ROOT}/.config/i3 ${HOME}/.config/i3
 
   mkdir -p ${HOME}/.config/Code/User
   mkdir -p "${HOME}/.config/Code - OSS/User"
