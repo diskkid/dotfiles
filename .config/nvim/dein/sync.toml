@@ -22,10 +22,17 @@ repo = 'majutsushi/tagbar'
 
 [[plugins]] # Theme
 repo = 'ayu-theme/ayu-vim'
+# on_event = ['VimEnter']
+# hook_post_source = '''
+#   let ayucolor='dark'
+#   colorscheme ayu
+#   highlight Visual ctermbg=11 guifg=#0F1419 guibg=#FFEE99
+#   highlight LineNr ctermfg=4 guifg=#5C6773
+# '''
+
+[[plugins]]
+repo = 'chriskempson/base16-vim'
 on_event = ['VimEnter']
 hook_post_source = '''
-  let ayucolor='dark'
-  colorscheme ayu
-  highlight Visual ctermbg=11 guifg=#0F1419 guibg=#FFEE99
-  highlight LineNr ctermfg=4 guifg=#5C6773
+  colorscheme base16-default-dark
 '''
