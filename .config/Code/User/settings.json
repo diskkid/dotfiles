@@ -7,8 +7,8 @@
     },
     "editor.formatOnSave": true,
     "rust.unstable_features": true,
-    "workbench.colorTheme": "Ayu Dark",
-    "workbench.iconTheme": "ayu",
+    "workbench.colorTheme": "Base16 Dark Default",
+    "workbench.iconTheme": "material-icon-theme",
     "editor.minimap.enabled": false,
     "workbench.colorCustomizations": {
         "[Ayu Dark]": {
@@ -28,6 +28,8 @@
     "terminal.integrated.fontFamily": "'HackGen Console for Powerline'",
     "C_Cpp.clang_format_style": "{BreakBeforeBraces: Attach, IndentWidth: 4}",
     "C_Cpp.clang_format_fallbackStyle": "LLVM",
+    "C_Cpp.clang_format_path": "/bin/clang-format",
     "editor.parameterHints.enabled": false,
-    "telemetry.enableCrashReporter": false
+    "telemetry.enableCrashReporter": false,
+    "go.inferGopath": true
 }
