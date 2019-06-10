@@ -10,7 +10,7 @@ install_latest() {
     cd $dest_dir
     git pull
   else
-    git clone "$src_url" "$dest_dir"
+    git clone --depth=1 "$src_url" "$dest_dir"
   fi
 }
 
