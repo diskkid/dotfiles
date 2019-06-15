@@ -81,11 +81,40 @@ deploy_config () {
   ln_if_not_exist ${ROOT}/.config/Code/User/settings.json "${HOME}/.config/Code - OSS/User/settings.json"
 }
 
-install_zplug
-install_dein
-install_rbenv
-install_ruby_build
-install_nodenv
-install_node_build
-install_jetbrains_npm
-deploy_config
+usage() {
+  cat <<USAGE
+Usage: $0 [-i] [-l]
+  -i: Install
+  -l: Make symbolic links to configuration files
+USAGE
+  exit 1
+}
+
+if [[ $# = 0 ]]; then
+  usage
+fi
+
+while getopts il OPT
+do
+  case $OPT in
+    "i" )
+      INSTALL="TRUE" ;;
+    "l" )
+      LINK="TRUE" ;;
+    * )
+      usage ;;
+  esac
+done
+
+if [[ $INSTALL != "" ]]; then
+  install_zplug
+  install_dein
+  install_rbenv
+  install_ruby_build
+  install_nodenv
+  install_node_build
+  install_jetbrains_npm
+fi
+if [[ $LINK != "" ]]; then
+  deploy_config
+fi
