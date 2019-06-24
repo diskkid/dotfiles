@@ -2,20 +2,19 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'vim-syntastic/syntastic'
+repo = 'Shougo/deoplete.nvim'
 hook_post_source = '''
-  set statusline+=%#warningmsg#
-  set statusline+=%{SyntasticStatuslineFlag()}
-  set statusline+=%*
-
-  let g:syntastic_always_populate_loc_list = 1
-  let g:syntastic_auto_loc_list = 1
-  let g:syntastic_check_on_open = 1
-  let g:syntastic_check_on_wq = 0
+let g:deplete#enable_at_startup = 1
+call deoplete#custom#option('sources', {
+  '_': ['ale'],
+})
+call deoplete#custom#option('omni_patterns', {
+  'go': '[^. *\t]\.\w*'
+})
 '''
 
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
+repo = 'w0rp/ale'
 
 [[plugins]]
 repo = 'majutsushi/tagbar'
