@@ -1,6 +1,8 @@
 {
     "telemetry.enableTelemetry": false,
-    "editor.fontFamily": "'HackGen-Regular', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "telemetry.enableCrashReporter": false,
+    "editor.fontFamily": "'HackGen', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "terminal.integrated.fontFamily": "'HackGen Console for Powerline'",
     "window.zoomLevel": 2,
     "files.exclude": {
         ".vscode": true
@@ -22,14 +24,12 @@
             "list.activeSelectionForeground": "#fff",
             "list.inactiveSelectionForeground": "#fff",
             "list.hoverForeground": "#fff",
-            "statusBar.foreground": "#999",
+            "statusBar.foreground": "#999"
         }
     },
-    "terminal.integrated.fontFamily": "'HackGen Console for Powerline'",
     "C_Cpp.clang_format_style": "{BreakBeforeBraces: Attach, IndentWidth: 4}",
     "C_Cpp.clang_format_fallbackStyle": "LLVM",
     "C_Cpp.clang_format_path": "/bin/clang-format",
     "editor.parameterHints.enabled": false,
-    "telemetry.enableCrashReporter": false,
     "go.inferGopath": true
 }
