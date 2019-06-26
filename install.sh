@@ -76,6 +76,7 @@ deploy_config () {
   ln_if_not_exist ${ROOT}/.config/alacritty ${HOME}/.config/alacritty
   ln_if_not_exist ${ROOT}/.config/fontconfig ${HOME}/.config/fontconfig
   ln_if_not_exist ${ROOT}/.config/dunst ${HOME}/.config/dunst
+  ln_if_not_exist ${ROOT}/.config/rofi ${HOME}/.config/rofi
 
   mkdir -p ${HOME}/.config/Code/User
   mkdir -p "${HOME}/.config/Code - OSS/User"
