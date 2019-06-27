@@ -78,6 +78,9 @@ deploy_config () {
   ln_if_not_exist ${ROOT}/.config/dunst ${HOME}/.config/dunst
   ln_if_not_exist ${ROOT}/.config/rofi ${HOME}/.config/rofi
 
+  ln_if_not_exist ${ROOT}/.xsession ${HOME}/.xsession
+  ln_if_not_exist ${ROOT}/.xkb ${HOME}/.xkb
+
   mkdir -p ${HOME}/.config/Code/User
   mkdir -p "${HOME}/.config/Code - OSS/User"
   ln_if_not_exist ${ROOT}/.config/Code/User/settings.json ${HOME}/.config/Code/User/settings.json
