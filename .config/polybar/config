@@ -78,7 +78,7 @@ modules-left = bspwm i3 alsa pulseaudio
 modules-center = 
 modules-right = memory cpu wlan eth battery temperature date powermenu
 
-tray-position = right
+tray-position = none
 tray-padding = 2
 ;tray-background = #0063ff
 
