@@ -3,7 +3,7 @@
     "telemetry.enableCrashReporter": false,
     "editor.fontFamily": "'HackGen', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "terminal.integrated.fontFamily": "'HackGen Console for Powerline'",
-    "window.zoomLevel": 2,
+    "window.zoomLevel": 0,
     "files.exclude": {
         ".vscode": true
     },
@@ -31,5 +31,11 @@
     "C_Cpp.clang_format_fallbackStyle": "LLVM",
     "C_Cpp.clang_format_path": "/bin/clang-format",
     "editor.parameterHints.enabled": false,
-    "go.inferGopath": true
+    "go.inferGopath": true,
+    "rust-client.rustupPath": "/home/diskkid/.cargo/bin/rustup",
+    "workbench.editor.enablePreview": false,
+    "gitlens.advanced.telemetry.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "editor.wordWrap": "on",
+    "editor.codeLens": false
 }
