@@ -46,7 +46,7 @@ source ${ZPLUG_HOME}/init.zsh
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "b4b4r07/enhancd", use:init.sh
-export ENHANCD_FILTER=peco
+export ENHANCD_FILTER=fzf:peco
 
 zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, as:theme
 SPACESHIP_PROMPT_ORDER=(
