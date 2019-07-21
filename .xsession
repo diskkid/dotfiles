@@ -1,4 +1,5 @@
 xkbcomp -I$HOME/.xkb $HOME/.xkb/keymap/kbd $DISPLAY
+xset r rate 200 30
 
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
