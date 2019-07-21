@@ -14,6 +14,15 @@ call deoplete#custom#option('omni_patterns', {
 '''
 
 [[plugins]]
+repo = 'vim-airline/vim-airline'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+hook_add = '''
+let g:airline_theme='base16_default'
+'''
+
+[[plugins]]
 repo = 'w0rp/ale'
 
 [[plugins]]
