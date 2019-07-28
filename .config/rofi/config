@@ -1,5 +1,5 @@
 ! "Enabled modi" Set from: Default
-! rofi.modi:                           window,run,ssh
+rofi.modi:                           window,run,ssh,combi
 
 ! "Window width" Set from: Default
 ! rofi.width:                          50
