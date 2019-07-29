@@ -58,6 +58,9 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <Leader>e :edit %%
 nmap <F8> :TagbarToggle<CR>
 
+nmap <C-n> gt
+nmap <C-p> gT
+
 " Terminal
 tnoremap <ESC> <C-\><C-n>
 
