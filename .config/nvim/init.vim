@@ -64,6 +64,9 @@ nmap <C-p> gT
 " Terminal
 tnoremap <ESC> <C-\><C-n>
 
+" C
+au BufRead,BufNewFile *.h,*.c set filetype=c
+
 " Rust
 au FileType rust nmap gd <Plug>(rust-def)
 au FileType rust nmap gs <Plug>(rust-def-split)
