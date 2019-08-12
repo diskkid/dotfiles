@@ -7,4 +7,6 @@ export XMODIFIERS=@im=fcitx
 
 export GDK_DPI_SCALE=1.25
 
+export PATH="$HOME/.local/bin:$PATH"
+
 exec i3
