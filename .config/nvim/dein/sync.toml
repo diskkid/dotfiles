@@ -21,7 +21,7 @@ repo = 'vim-scripts/FuzzyFinder'
 hook_add = '''
   let g:fuf_keyOpen = '<Tab>'
   let g:fuf_keyOpenTabpage = '<CR>'
-  map <Leader>f :FufFile **/<CR>
+  map <Leader>f :FufFile <CR>
 '''
 
 [[plugins]]
