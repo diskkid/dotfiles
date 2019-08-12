@@ -6,11 +6,11 @@ repo = 'Shougo/deoplete.nvim'
 hook_post_source = '''
 let g:deplete#enable_at_startup = 1
 call deoplete#custom#option('sources', {
-  '_': ['ale'],
-})
+  \ '_': ['ale'],
+  \ })
 call deoplete#custom#option('omni_patterns', {
-  'go': '[^. *\t]\.\w*'
-})
+  \ 'go': '[^. *\t]\.\w*'
+  \ })
 '''
 
 [[plugins]]
