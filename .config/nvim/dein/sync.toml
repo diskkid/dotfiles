@@ -26,12 +26,15 @@ map <Leader>f :FufFile <CR>
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
+hook_add = '''
+let g:airline_powerline_fonts = 1
+'''
+hook_post_source = '''
+AirlineTheme base16_default
+'''
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
-hook_add = '''
-let g:airline_theme='base16_default'
-'''
 
 [[plugins]]
 repo = 'w0rp/ale'
