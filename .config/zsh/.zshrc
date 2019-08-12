@@ -1,41 +1,10 @@
-# See https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
-export XDG_DATA_HOME=${HOME}/.local/share
-export XDG_CONFIG_HOME=${HOME}/.config
-export XDG_CACHE_HOME=${HOME}/.cache
-
-# For coloring macOS ls
-export CLICOLOR=1
-
-#==============================================================================
-# PATH
-#==============================================================================
-PATH="${HOME}/.bin:${HOME}/.local/bin:${PATH}"
-PATH="/usr/local/sbin:${PATH}"
-# Use coreutils
-# equivalent to export PATH="$(brew --prefix coreutils)/libexec/gnubin:${PATH}"
-if [ -e /usr/local/opt/coreutils ]; then
-  PATH="/usr/local/opt/coreutils/libexec/gnubin:${PATH}"
-  MANPATH="/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}"
-fi
-
 #==============================================================================
 # Go
 #==============================================================================
-if [ -e /usr/local/go ]; then
-  PATH="/usr/local/go/bin:${PATH}"
-fi
 
-which go > /dev/null
-if [ $? -eq 0 ]; then
-  export GOPATH=${HOME}/Code/go
+if [ which go > /dev/null 2>&1 ]; then
   PATH=${PATH}:$(go env GOPATH)/bin
 fi
-
-#==============================================================================
-# Rust
-#==============================================================================
-PATH="${HOME}/.cargo/bin:${PATH}"
-export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
 #==============================================================================
 # zplug
@@ -93,27 +62,9 @@ fi
 zplug load
 
 #==============================================================================
-# rbenv
-#==============================================================================
-export RBENV_ROOT="$XDG_DATA_HOME/rbenv"
-if [ -e "$RBENV_ROOT" ]; then
-  PATH="${RBENV_ROOT}/bin:${PATH}"
-  eval "$(rbenv init -)"
-fi
-
-#==============================================================================
 # OPAM configuration
 #==============================================================================
 . ${HOME}/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
-#==============================================================================
-# nodenv
-#==============================================================================
-export NODENV_ROOT="${XDG_DATA_HOME}/nodenv"
-if [ -e "$NODENV_ROOT" ]; then
-  PATH="${NODENV_ROOT}/bin:${PATH}"
-  eval "$(nodenv init -)"
-fi
 
 #==============================================================================
 # zsh options
