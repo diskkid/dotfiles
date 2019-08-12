@@ -28,6 +28,7 @@ map <Leader>f :FufFile <CR>
 repo = 'vim-airline/vim-airline'
 hook_add = '''
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 '''
 hook_post_source = '''
 AirlineTheme base16_default
