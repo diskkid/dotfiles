@@ -35,6 +35,9 @@ hook_add = '''
 
 [[plugins]]
 repo = 'w0rp/ale'
+hook_post_source = '''
+let g:ale_c_parse_makefile = 1
+'''
 
 [[plugins]]
 repo = 'majutsushi/tagbar'
