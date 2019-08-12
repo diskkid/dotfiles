@@ -48,6 +48,7 @@ set ruler
 set backspace=indent,eol,start
 
 " Autocmd
+au VimEnter * call dein#call_hook('post_source')
 au BufReadPost *
   \ if line("'\"") > 0 && line("'\"") <= line("$") |
   \   exe "normal g`\"" |
