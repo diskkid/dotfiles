@@ -113,5 +113,7 @@ if (which zprof > /dev/null 2>&1) ;then
   zprof
 fi
 
+stty -ixon # Disable ctrl-c and ctrl-q
+
 # Export
 export PATH
