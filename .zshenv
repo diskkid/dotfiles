@@ -58,3 +58,4 @@ if [ -e "$NODENV_ROOT" ]; then
   eval "$(nodenv init -)"
 fi
 
+export FZF_DEFAULT_OPTS="--layout=reverse --height=50%"
