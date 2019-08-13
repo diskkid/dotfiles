@@ -1,5 +1,5 @@
 set nocompatible
-let mapleader = ","
+let mapleader = " "
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Dein
@@ -46,6 +46,14 @@ set termguicolors
 set number
 set ruler
 set backspace=indent,eol,start
+set splitbelow splitright
+set nobackup
+set autoread
+set scrolloff=5
+set wildmenu
+set wildmode=longest,full
+
+let g:netrw_banner = 0
 
 " Autocmd
 au VimEnter * call dein#call_hook('post_source')
@@ -53,6 +61,8 @@ au BufReadPost *
   \ if line("'\"") > 0 && line("'\"") <= line("$") |
   \   exe "normal g`\"" |
   \ endif
+" Remove all trailing whitespaces on save
+au BufWritePre * %s/\s\+$//e
 
 " Key mapping
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
@@ -61,6 +71,11 @@ nmap <F8> :TagbarToggle<CR>
 
 nmap <C-n> gt
 nmap <C-p> gT
+
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
 
 " Terminal
 tnoremap <ESC> <C-\><C-n>
