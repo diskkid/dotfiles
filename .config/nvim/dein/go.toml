@@ -1,5 +1,0 @@
-[[plugins]]
-repo = 'fatih/vim-go'
-hook_add = '''
-  set ts=2
-'''

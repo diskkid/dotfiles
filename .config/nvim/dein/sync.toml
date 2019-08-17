@@ -4,13 +4,12 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 hook_post_source = '''
-let g:deplete#enable_at_startup = 1
+let g:deoplete#auto_complete_delay = 0
 call deoplete#custom#option('sources', {
   \ '_': ['ale'],
   \ })
-call deoplete#custom#option('omni_patterns', {
-  \ 'go': '[^. *\t]\.\w*'
-  \ })
+
+call deoplete#enable()
 '''
 
 [[plugins]]
@@ -21,7 +20,9 @@ repo = 'vim-scripts/FuzzyFinder'
 hook_add = '''
 let g:fuf_keyOpen = '<Tab>'
 let g:fuf_keyOpenTabpage = '<CR>'
-map <Leader>f :FufFile <CR>
+map <Leader>f :FufFile **/<CR>
+map <Leader>b :FufBuffer<CR>
+map <Leader>q :FufQuickfix<CR>
 '''
 
 [[plugins]]
@@ -40,40 +41,38 @@ repo = 'vim-airline/vim-airline-themes'
 [[plugins]]
 repo = 'w0rp/ale'
 hook_post_source = '''
+let g:ale_update_tagstack = 1
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+
+let g:ale_c_parse_compile_commands = 1
 let g:ale_c_parse_makefile = 1
+let g:ale_c_clang_options = '-L. -I. -std=c11 -Wall'
+let g:ale_c_clangd_options = '-background-index'
+
+let g:ale_rust_rls_toolchain = 'nightly'
+
+let g:ale_linters = {
+  \ 'c':    ['clangd'],
+  \ 'cpp':  ['clangd'],
+  \ 'go':   ['gofmt', 'golint', 'go vet'],
+  \ 'rust': ['rls', 'cargo'],
+  \ }
+
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+  \ '*':    ['remove_trailing_lines', 'trim_whitespace'],
+  \ 'c':    ['clang-format'],
+  \ 'cpp':  ['clang-format'],
+  \ 'go':   ['gofmt', 'goimports'],
+  \ 'rust': ['rustfmt'],
+  \ }
+
+nnoremap <silent> gd :ALEGoToDefinitionInTab<CR>
 '''
 
 [[plugins]]
 repo = 'majutsushi/tagbar'
-
-[[plugins]]
-repo = 'autozimu/LanguageClient-neovim'
-rev = 'next'
-build = 'bash install.sh'
-hook_pre_source = '''
-set hidden
-
-let g:LanguageClient_serverCommands = {
-  \ 'c': ['clangd'],
-  \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-  \ }
-
-let g:LanguageClient_autoStart = 1
-
-nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-'''
-
-[[plugins]] # Theme
-repo = 'ayu-theme/ayu-vim'
-# on_event = ['VimEnter']
-# hook_post_source = '''
-#   let ayucolor='dark'
-#   colorscheme ayu
-#   highlight Visual ctermbg=11 guifg=#0F1419 guibg=#FFEE99
-#   highlight LineNr ctermfg=4 guifg=#5C6773
-# '''
 
 [[plugins]]
 repo = 'chriskempson/base16-vim'
