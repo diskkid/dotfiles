@@ -56,32 +56,31 @@ set hidden
 let g:netrw_banner = 0
 
 " Autocmd
-au BufReadPost *
+autocmd BufReadPost *
   \ if line("'\"") > 0 && line("'\"") <= line("$") |
   \   exe "normal g`\"" |
   \ endif
-au QuickFixCmdPost *grep* cwindow
+autocmd QuickFixCmdPost *grep* cwindow
 autocmd VimEnter * call dein#call_hook('post_source')
 
 " MoveToNewTab
 nnoremap <silent> tm :<C-u>call <SID>MoveToNewTab()<CR>
 function! s:MoveToNewTab()
-    tab split
-    tabprevious
+  tab split
+  tabprevious
 
-    if winnr('$') > 1
-        close
-    elseif bufnr('$') > 1
-        buffer #
-    endif
+  if winnr('$') > 1
+    close
+  elseif bufnr('$') > 1
+    buffer #
+  endif
 
-    tabnext
+  tabnext
 endfunction
 
 " Key mapping
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <Leader>e :edit %%
-nmap <F8> :TagbarToggle<CR>
 
 nmap <C-n> gt
 nmap <C-p> gT
@@ -90,6 +89,8 @@ nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
+
+nmap <Leader>r :source ~/.config/nvim/init.vim<CR>
 
 " Terminal
 tnoremap <ESC> <C-\><C-n>
