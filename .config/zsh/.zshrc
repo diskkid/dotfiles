@@ -108,6 +108,10 @@ if [ $? -eq 0 ]; then
   alias ls='ls --color=auto'
 fi
 
+if which exa > /dev/null 2>&1; then
+  alias ls=exa
+fi
+
 # Performance measurement
 if (which zprof > /dev/null 2>&1) ;then
   zprof
