@@ -31,14 +31,19 @@ path=(
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}"
 
 #==============================================================================
-# GOPATH
+# Go
 #==============================================================================
-export GOPATH=${HOME}/Code/go
+if type go > /dev/null 2>&1; then
+  PATH=${PATH}:$(go env GOPATH)/bin
+  export GOPATH=${HOME}/Code/go
+fi
 
 #==============================================================================
 # Rust
 #==============================================================================
-export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+if type rustc > /dev/null 2>&1; then
+  export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+fi
 
 #==============================================================================
 # rbenv

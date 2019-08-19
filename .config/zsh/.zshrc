@@ -1,16 +1,8 @@
 #==============================================================================
-# Go
-#==============================================================================
-
-if [ which go > /dev/null 2>&1 ]; then
-  PATH=${PATH}:$(go env GOPATH)/bin
-fi
-
-#==============================================================================
 # zplug
 #==============================================================================
-export ZPLUG_HOME=${XDG_DATA_HOME}/zplug
-source ${ZPLUG_HOME}/init.zsh
+export ZPLUG_HOME=${XDG_DATA_HOME:-$HOME/.local/share}/zplug
+source $ZPLUG_HOME/init.zsh
 
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
@@ -62,21 +54,15 @@ fi
 zplug load
 
 #==============================================================================
-# OPAM configuration
-#==============================================================================
-. ${HOME}/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
-#==============================================================================
 # zsh options
 #==============================================================================
-
 export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 setopt hist_ignore_all_dups
 setopt hist_reduce_blanks
 setopt hist_no_store
 setopt share_history
-mkdir -p ${XDG_CACHE_HOME}/zsh
-HISTFILE=${XDG_CACHE_HOME}/zsh/.zsh_history
+mkdir -p ${XDG_CACHE_HOME:-$HOME/.cache}/zsh
+HISTFILE=${XDG_CACHE_HOME:-$HOME/.cache}/zsh/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 touch $HISTFILE
@@ -103,17 +89,14 @@ fi
 #==============================================================================
 # aliases
 #==============================================================================
-ls --color=auto > /dev/null 2>&1
-if [ $? -eq 0 ]; then
+if type exa > /dev/null 2>&1; then
+  alias ls=exa
+elif ls --color=auto > /dev/null 2>&1; then
   alias ls='ls --color=auto'
 fi
 
-if which exa > /dev/null 2>&1; then
-  alias ls=exa
-fi
-
 # Performance measurement
-if (which zprof > /dev/null 2>&1) ;then
+if type zprof > /dev/null 2>&1; then
   zprof
 fi
 
