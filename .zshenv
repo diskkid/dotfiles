@@ -34,8 +34,8 @@ MANPATH="/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}"
 # Go
 #==============================================================================
 if type go > /dev/null 2>&1; then
-  PATH=${PATH}:$(go env GOPATH)/bin
   export GOPATH=${HOME}/Code/go
+  PATH=${PATH}:$(go env GOPATH)/bin
 fi
 
 #==============================================================================
