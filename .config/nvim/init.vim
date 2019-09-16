@@ -85,6 +85,9 @@ map <Leader>e :edit %%
 nmap <C-n> gt
 nmap <C-p> gT
 
+nmap <silent> <Leader>n :tabm +1<CR>
+nmap <silent> <Leader>p :tabm -1<CR>
+
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
