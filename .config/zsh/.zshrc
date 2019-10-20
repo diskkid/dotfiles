@@ -100,6 +100,8 @@ if type zprof > /dev/null 2>&1; then
   zprof
 fi
 
+alias less='less -R'
+
 stty -ixon # Disable ctrl-c and ctrl-q
 
 # Export
