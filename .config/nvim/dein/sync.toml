@@ -108,19 +108,21 @@ let g:ale_c_clangd_options = '-background-index'
 let g:ale_rust_rls_toolchain = 'nightly'
 
 let g:ale_linters = {
-  \ 'c':    ['clangd'],
-  \ 'cpp':  ['clangd'],
-  \ 'go':   ['gofmt', 'golint', 'go vet'],
-  \ 'rust': ['rls', 'cargo'],
+  \ 'c':      ['clangd'],
+  \ 'cpp':    ['clangd'],
+  \ 'go':     ['gofmt', 'golint', 'go vet'],
+  \ 'python': ['pyls'],
+  \ 'rust':   ['rls', 'cargo'],
   \ }
 
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
-  \ '*':    ['remove_trailing_lines', 'trim_whitespace'],
-  \ 'c':    ['clang-format'],
-  \ 'cpp':  ['clang-format'],
-  \ 'go':   ['gofmt', 'goimports'],
-  \ 'rust': ['rustfmt'],
+  \ '*':      ['remove_trailing_lines', 'trim_whitespace'],
+  \ 'c':      ['clang-format'],
+  \ 'cpp':    ['clang-format'],
+  \ 'go':     ['gofmt', 'goimports'],
+  \ 'python': ['autopep8'],
+  \ 'rust':   ['rustfmt'],
   \ }
 
 nnoremap <silent> gd :ALEGoToDefinitionInTab<CR>
