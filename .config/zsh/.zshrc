@@ -75,6 +75,7 @@ function select_history () {
 
 zle -N select_history
 bindkey '^R' select_history
+bindkey -e
 
 #==============================================================================
 # Editor
