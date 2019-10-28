@@ -52,6 +52,8 @@ set scrolloff=5
 set wildmenu
 set wildmode=longest,full
 set hidden
+set cursorline
+set lazyredraw
 
 let g:netrw_banner = 0
 
