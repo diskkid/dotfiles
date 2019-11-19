@@ -47,6 +47,7 @@ set ruler
 set backspace=indent,eol,start
 set splitbelow splitright
 set nobackup
+set nowritebackup
 set autoread
 set scrolloff=5
 set wildmenu
@@ -63,7 +64,6 @@ autocmd BufReadPost *
   \   exe "normal g`\"" |
   \ endif
 autocmd QuickFixCmdPost *grep* cwindow
-autocmd VimEnter * call dein#call_hook('post_source')
 
 " MoveToNewTab
 nnoremap <silent> tm :<C-u>call <SID>MoveToNewTab()<CR>
@@ -95,10 +95,10 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
-nmap <Leader>r :source ~/.config/nvim/init.vim<CR>
+nmap <Leader>r :source $XDG_CONFIG_HOME/nvim/init.vim<CR>
 
 " Terminal
 tnoremap <ESC> <C-\><C-n>
 
 " C
-au BufRead,BufNewFile *.h,*.c set filetype=c
+autocmd BufRead,BufNewFile *.h,*.c set filetype=c

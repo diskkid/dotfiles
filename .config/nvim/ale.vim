@@ -7,8 +7,6 @@ let g:ale_c_parse_makefile = 1
 let g:ale_c_clang_options = '-L. -I. -std=c11 -Wall'
 let g:ale_c_clangd_options = '-background-index'
 
-let g:ale_rust_rls_toolchain = 'nightly'
-
 let g:ale_linters = {
   \ 'c':      ['clangd'],
   \ 'cpp':    ['clangd'],
@@ -26,5 +24,3 @@ let g:ale_fixers = {
   \ 'python': ['autopep8'],
   \ 'rust':   ['rustfmt'],
   \ }
-
-nnoremap <silent> gd :ALEGoToDefinitionInTab<CR>

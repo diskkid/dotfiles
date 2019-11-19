@@ -2,22 +2,11 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-hook_post_source = '''
-let g:deoplete#auto_complete_delay = 0
-call deoplete#custom#option('sources', {
-  \ '_': ['ale'],
-  \ })
-
-call deoplete#enable()
-'''
-
-[[plugins]]
 repo = 'vim-scripts/L9'
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
-hook_post_source = '''source $XDG_CONFIG_HOME/nvim/denite.vim'''
+hook_post_source = 'source $XDG_CONFIG_HOME/nvim/denite.vim'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
@@ -34,17 +23,15 @@ repo = 'vim-airline/vim-airline-themes'
 
 [[plugins]]
 repo = 'w0rp/ale'
-hook_post_source = '''source $XDG_CONFIG_HOME/nvim/ale.vim'''
+hook_post_source = 'source $XDG_CONFIG_HOME/nvim/ale.vim'
 
 [[plugins]]
-repo = 'majutsushi/tagbar'
-hook_post_source = '''
-nmap <F8> :TagbarToggle<CR>
-'''
+repo = 'neoclide/coc.nvim'
+rev = 'release'
+merged = 0
+hook_add = 'source $XDG_CONFIG_HOME/nvim/coc.vim'
 
 [[plugins]]
 repo = 'chriskempson/base16-vim'
-on_event = ['VimEnter']
-hook_post_source = '''
-colorscheme base16-default-dark
-'''
+merged = 0
+hook_add = 'au VimEnter * nested colorscheme base16-default-dark'
