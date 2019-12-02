@@ -6,7 +6,7 @@ repo = 'vim-scripts/L9'
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
-hook_post_source = 'source $XDG_CONFIG_HOME/nvim/denite.vim'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/denite.vim'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
