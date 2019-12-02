@@ -22,10 +22,6 @@ AirlineTheme base16_default
 repo = 'vim-airline/vim-airline-themes'
 
 [[plugins]]
-repo = 'w0rp/ale'
-hook_post_source = 'source $XDG_CONFIG_HOME/nvim/ale.vim'
-
-[[plugins]]
 repo = 'neoclide/coc.nvim'
 rev = 'release'
 merged = 0

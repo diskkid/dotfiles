@@ -84,8 +84,9 @@ endfunction
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <Leader>e :edit %%
 
-nmap <C-n> gt
-nmap <C-p> gT
+nmap <silent> <C-n> :bnext<CR>
+nmap <silent> <C-p> :bprev<CR>
+nmap <silent> <C-c> :bd %<CR>
 
 nmap <silent> <Leader>n :tabm +1<CR>
 nmap <silent> <Leader>p :tabm -1<CR>
