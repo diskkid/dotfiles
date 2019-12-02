@@ -66,6 +66,7 @@ ln_if_not_exist () {
 
 deploy_config () {
   mkdir -p ${HOME}/.config
+  ln_if_not_exist ${ROOT}/.tmux.conf ${HOME}/.tmux.conf
   ln_if_not_exist ${ROOT}/.zshenv ${HOME}/.zshenv
   ln_if_not_exist ${ROOT}/.config/zsh ${HOME}/.config/zsh
   ln_if_not_exist ${ROOT}/.config/fish ${HOME}/.config/fish
