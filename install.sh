@@ -56,6 +56,12 @@ install_jetbrains_npm () {
     ${HOME}/.local/share/nodenv/lib/node_modules/npm
 }
 
+install_tmux_themepack () {
+  install_latest \
+    https://github.com/jimeh/tmux-themepack.git \
+    ${HOME}/.local/share/tmux-themepack
+}
+
 ln_if_not_exist () {
   if [ -e "$2" ]; then
     echo "$2 already exists."
@@ -121,6 +127,7 @@ if [[ $INSTALL != "" ]]; then
   install_nodenv
   install_node_build
   install_jetbrains_npm
+  install_tmux_themepack
 fi
 if [[ $LINK != "" ]]; then
   deploy_config
