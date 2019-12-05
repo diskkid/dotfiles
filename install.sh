@@ -120,14 +120,15 @@ do
 done
 
 if [[ $INSTALL != "" ]]; then
-  install_zplug
-  install_dein
-  install_rbenv
-  install_ruby_build
-  install_nodenv
-  install_node_build
-  install_jetbrains_npm
-  install_tmux_themepack
+  install_zplug &
+  install_dein &
+  install_rbenv &
+  install_ruby_build &
+  install_nodenv &
+  install_node_build &
+  install_jetbrains_npm &
+  install_tmux_themepack &
+  wait
 fi
 if [[ $LINK != "" ]]; then
   deploy_config
