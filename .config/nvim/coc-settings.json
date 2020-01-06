@@ -1,5 +1,5 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["rust"],
+  "coc.preferences.formatOnSaveFiletypes": ["*"],
   "python.jediEnabled": false,
   "languageserver": {
     "haskell": {
