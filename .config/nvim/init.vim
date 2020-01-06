@@ -65,21 +65,6 @@ autocmd BufReadPost *
   \ endif
 autocmd QuickFixCmdPost *grep* cwindow
 
-" MoveToNewTab
-nnoremap <silent> tm :<C-u>call <SID>MoveToNewTab()<CR>
-function! s:MoveToNewTab()
-  tab split
-  tabprevious
-
-  if winnr('$') > 1
-    close
-  elseif bufnr('$') > 1
-    buffer #
-  endif
-
-  tabnext
-endfunction
-
 " Key mapping
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <Leader>e :edit %%
