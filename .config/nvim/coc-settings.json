@@ -7,6 +7,16 @@
       "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
       "filetypes": ["go"]
     },
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "objc", "objcpp"],
+      "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+      "initializationOptions": {
+        "cache": {
+          "directory": "/tmp/ccls"
+        }
+      }
+    },
     "haskell": {
       "command": "hie-wrapper",
       "rootPatterns": [
@@ -25,5 +35,8 @@
         }
       }
     }
+  },
+  "diagnostic-languageserver.filetypes": {
+    "sh": "shellcheck"
   }
 }
