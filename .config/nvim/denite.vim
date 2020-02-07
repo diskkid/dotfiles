@@ -52,8 +52,8 @@ call denite#custom#var('file/rec', 'command',
   \ '-type', 'l', '-print', '-o',
   \ '-type', 'f', '-print'])
 
-nnoremap <silent> <Leader>f :Denite -auto-action=preview -start-filter -prompt=$
-  \ `finddir('.git', ';') != '' ? 'file/rec/git' : 'file/rec'`<CR>
+" nnoremap <silent> <Leader>f :Denite -auto-action=preview -start-filter -prompt=$
+"   \ `finddir('.git', ';') != '' ? 'file/rec/git' : 'file/rec'`<CR>
 nnoremap <silent> <Leader>b :Denite buffer<CR>
 nnoremap <silent> <Leader>y :Denite neoyank<CR>
 nnoremap <silent> <Leader>s :Denite -auto-action=preview grep<CR>

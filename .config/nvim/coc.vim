@@ -19,3 +19,4 @@ function! s:show_documentation()
 endfunction
 
 nmap <silent> <Leader>l :CocList<CR>
+nmap <silent> <Leader>f :CocList files<CR>
