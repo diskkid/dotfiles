@@ -26,7 +26,7 @@ set smartindent
 set expandtab
 set shiftwidth=2
 set softtabstop=2
-set ts=2
+set tabstop=2
 
 " Common
 set termguicolors
@@ -43,6 +43,8 @@ set wildmode=longest,full
 set hidden
 set cursorline
 set lazyredraw
+set list
+set listchars=tab:»-
 
 let g:netrw_banner = 0
 
