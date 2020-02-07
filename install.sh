@@ -20,10 +20,9 @@ install_zplug () {
     "$HOME/.local/share/zplug"
 }
 
-install_dein () {
-  install_latest \
-    https://github.com/Shougo/dein.vim.git \
-    "$HOME/.local/share/dein/repos/github.com/Shougo/dein.vim"
+install_vim_plug () {
+  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 }
 
 install_rbenv () {
@@ -120,7 +119,7 @@ done
 
 if [[ $INSTALL != "" ]]; then
   install_zplug &
-  install_dein &
+  install_vim_plug &
   install_rbenv &
   install_ruby_build &
   install_nodenv &

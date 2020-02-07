@@ -1,8 +1,0 @@
-[[plugins]]
-repo = 'leafgarland/typescript-vim'
-hook_post_source = '''
-  let g:typescript_compiler_binary = 'tsc'
-'''
-
-[[plugins]]
-repo = 'ianks/vim-tsx'

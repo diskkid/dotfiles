@@ -2,34 +2,23 @@ set nocompatible
 let mapleader = " "
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Dein
-set runtimepath+=~/.local/share/dein/repos/github.com/Shougo/dein.vim
-
-if dein#load_state('~/.local/share/dein')
-  call dein#begin('~/.local/share/dein')
-    call dein#add('~/.local/share/dein')
-
-    call dein#load_toml('~/.config/nvim/dein/sync.toml')
-    call dein#load_toml('~/.config/nvim/dein/elixir.toml', {'on_ft': 'elixir'})
-    call dein#load_toml('~/.config/nvim/dein/elm.toml',    {'on_ft': 'elm'})
-    call dein#load_toml('~/.config/nvim/dein/js.toml',     {'on_ft': 'javascript'})
-    call dein#load_toml('~/.config/nvim/dein/ruby.toml',   {'on_ft': 'ruby'})
-    call dein#load_toml('~/.config/nvim/dein/rust.toml',   {'on_ft': 'rust'})
-    call dein#load_toml('~/.config/nvim/dein/slim.toml',   {'on_ft': 'slim'})
-    call dein#load_toml('~/.config/nvim/dein/toml.toml',   {'on_ft': 'toml'})
-    call dein#load_toml('~/.config/nvim/dein/ts.toml',     {'on_ft': 'typescript'})
-  call dein#end()
-
-  if dein#check_install()
-    call dein#install()
-  endif
-
-  call dein#save_state()
-endif
-
-filetype plugin indent on
-syntax enable
+" vim-plug
+call plug#begin(stdpath('data') . '/plugged')
+Plug 'Shougo/dein.vim'
+Plug 'vim-scripts/L9'
+Plug 'Shougo/denite.nvim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'chriskempson/base16-vim'
+call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+source $XDG_CONFIG_HOME/nvim/denite.vim
+source $XDG_CONFIG_HOME/nvim/coc.vim
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+colorscheme base16-default-dark
 
 " Indent
 set autoindent
