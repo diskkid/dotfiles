@@ -1,3 +1,11 @@
+call coc#add_extension(
+      \ 'coc-lists',
+      \ 'coc-diagnostic',
+      \ 'coc-json',
+      \ 'coc-tsserver',
+      \ 'coc-rls',
+      \ )
+
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
