@@ -55,5 +55,12 @@
   },
   "diagnostic-languageserver.filetypes": {
     "sh": "shellcheck"
-  }
+  },
+  "list.source.files.args": [
+    "--hidden",
+    "--files"
+  ],
+  "list.source.files.excludePatterns": [
+    "**/.git/**"
+  ]
 }
