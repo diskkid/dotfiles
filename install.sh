@@ -3,14 +3,14 @@
 ROOT="$(cd "${BASH_SOURCE%/*}" || exit 1; pwd)"
 
 install_latest() {
-  local src_url="$1"
-  local dest_dir="$2"
+  local -r SRC_URL="$1"
+  local -r DEST_DIR="$2"
 
-  if [[ -e "$dest_dir" ]]; then
-    cd "$dest_dir" || exit 1
+  if [[ -e "$DEST_DIR" ]]; then
+    cd "$DEST_DIR" || exit 1
     git pull
   else
-    git clone --depth=1 "$src_url" "$dest_dir"
+    git clone --depth=1 "$SRC_URL" "$DEST_DIR"
   fi
 }
 
@@ -21,8 +21,11 @@ install_zplug () {
 }
 
 install_vim_plug () {
-  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  local -r DEST=$HOME/.local/share/nvim/site/autoload/plug.vim
+  if [[ ! -e "$DEST" ]]; then
+    curl -fLo "$DEST" --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  fi
 }
 
 install_rbenv () {
