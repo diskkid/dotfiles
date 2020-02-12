@@ -56,6 +56,10 @@
   "diagnostic-languageserver.filetypes": {
     "sh": "shellcheck"
   },
+  "list.insertMappings": {
+    "<C-n>": "normal:j",
+    "<C-p>": "normal:k"
+  },
   "list.source.files.args": [
     "--hidden",
     "--files"
