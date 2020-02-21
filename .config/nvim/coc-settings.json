@@ -4,16 +4,16 @@
   ],
   "python.jediEnabled": false,
   "languageserver": {
-    "golang": {
-      "command": "gopls",
-      "rootPatterns": [
-        "go.mod",
-        ".vim/",
-        ".git/",
-        ".hg/"
+    "bash": {
+      "command": "bash-language-server",
+      "args": [
+        "start"
       ],
       "filetypes": [
-        "go"
+        "sh"
+      ],
+      "ignoredRootPaths": [
+        "~"
       ]
     },
     "clangd": {
@@ -32,6 +32,36 @@
         "cpp",
         "objc",
         "objcpp"
+      ]
+    },
+    "dockerfile": {
+      "command": "docker-langserver",
+      "filetypes": [
+        "dockerfile"
+      ],
+      "args": [
+        "--stdio"
+      ]
+    },
+    "efm": {
+      "command": "efm-langserver",
+      "args": [],
+      "filetypes": [
+        "vim",
+        "eruby",
+        "markdown"
+      ]
+    },
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": [
+        "go.mod",
+        ".vim/",
+        ".git/",
+        ".hg/"
+      ],
+      "filetypes": [
+        "go"
       ]
     },
     "haskell": {

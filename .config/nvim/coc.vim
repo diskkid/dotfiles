@@ -1,9 +1,10 @@
 call coc#add_extension(
-      \ 'coc-lists',
       \ 'coc-diagnostic',
       \ 'coc-json',
-      \ 'coc-tsserver',
+      \ 'coc-lists',
       \ 'coc-rls',
+      \ 'coc-solargraph',
+      \ 'coc-tsserver',
       \ )
 
 " Use `[g` and `]g` to navigate diagnostics
