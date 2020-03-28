@@ -12,6 +12,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'chriskempson/base16-vim'
 
+Plug 'mattn/emmet-vim'
+
 Plug 'cespare/vim-toml'
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -61,8 +63,10 @@ autocmd QuickFixCmdPost *grep* cwindow
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <Leader>e :edit %%
 
-nmap <silent> <C-n> :bnext<CR>
-nmap <silent> <C-p> :bprev<CR>
+nmap <silent> <C-n> gt<CR>
+nmap <silent> <C-p> gT<CR>
+nmap <silent> <M-n> :tabm +1<CR>
+nmap <silent> <M-p> :tabm -1<CR>
 nmap <silent> <C-c> :bd %<CR>
 
 nmap <silent> <Leader>n :tabm +1<CR>

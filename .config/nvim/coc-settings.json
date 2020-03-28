@@ -2,6 +2,7 @@
   "coc.preferences.formatOnSaveFiletypes": [
     "*"
   ],
+  "coc.preferences.jumpCommand": "tab drop",
   "python.jediEnabled": false,
   "languageserver": {
     "bash": {
