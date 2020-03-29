@@ -123,9 +123,9 @@ done
 if [[ $INSTALL != "" ]]; then
   install_zplug &
   install_vim_plug &
-  install_rbenv &
+  install_rbenv
   install_ruby_build &
-  install_nodenv &
+  install_nodenv
   install_node_build &
   install_jetbrains_npm &
   install_tmux_themepack &
