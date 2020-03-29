@@ -36,4 +36,4 @@ endfunction
 
 nmap <silent> <Leader>l :CocList<CR>
 nmap <silent> <Leader>f :CocList -A --tab files<CR>
-nmap <silent> <Leader>g :CocList -A grep<CR>
+nmap <silent> <Leader>g :CocList grep<CR>
