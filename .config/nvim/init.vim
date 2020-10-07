@@ -4,7 +4,6 @@ let mapleader = " "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-plug
 call plug#begin(stdpath('data') . '/plugged')
-Plug 'Shougo/dein.vim'
 Plug 'vim-scripts/L9'
 Plug 'Shougo/denite.nvim'
 Plug 'vim-airline/vim-airline'
