@@ -3,7 +3,6 @@
     "*"
   ],
   "coc.preferences.jumpCommand": "tab drop",
-  "python.jediEnabled": false,
   "languageserver": {
     "bash": {
       "command": "bash-language-server",
