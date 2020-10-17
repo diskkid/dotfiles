@@ -14,6 +14,8 @@ Plug 'chriskempson/base16-vim'
 Plug 'mattn/emmet-vim'
 
 Plug 'cespare/vim-toml'
+
+Plug 'mattn/vim-goimports'
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
