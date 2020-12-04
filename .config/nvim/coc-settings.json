@@ -65,22 +65,21 @@
       ]
     },
     "haskell": {
-      "command": "hie-wrapper",
+      "command": "haskell-language-server-wrapper",
+      "args": [
+        "--lsp"
+      ],
       "rootPatterns": [
+        "*.cabal",
         "stack.yaml",
-        "cabal.config",
-        "package.yaml"
+        "cabal.project",
+        "package.yaml",
+        "hie.yaml"
       ],
       "filetypes": [
-        "hs",
-        "lhs",
-        "haskell"
-      ],
-      "initializationOptions": {
-        "languageServerHaskell": {
-          "hlintOn": true
-        }
-      }
+        "haskell",
+        "lhaskell"
+      ]
     }
   },
   "diagnostic-languageserver.filetypes": {
