@@ -2,7 +2,6 @@ call coc#add_extension(
       \ 'coc-diagnostic',
       \ 'coc-json',
       \ 'coc-lists',
-      \ 'coc-rls',
       \ 'coc-rust-analyzer',
       \ 'coc-solargraph',
       \ 'coc-tsserver',
