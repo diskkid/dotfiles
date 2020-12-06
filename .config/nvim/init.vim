@@ -53,6 +53,7 @@ set cursorline
 set lazyredraw
 set list
 set listchars=tab:»-
+set updatetime=100
 
 let g:netrw_banner = 0
 
