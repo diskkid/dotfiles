@@ -64,7 +64,7 @@ autocmd QuickFixCmdPost *grep* cwindow
 
 " Key mapping
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
-map <Leader>e :edit %%
+map <Leader>e :tabe %%
 
 nnoremap <silent> <C-n> gt<CR>
 nnoremap <silent> <C-p> gT<CR>
