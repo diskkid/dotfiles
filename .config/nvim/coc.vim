@@ -34,6 +34,8 @@ function! s:show_documentation()
 endfunction
 
 
-nmap <silent> <Leader>l :CocList<CR>
-nmap <silent> <Leader>f :CocList -A --tab files<CR>
-nmap <silent> <Leader>g :CocList grep<CR>
+nnoremap [list] <Nop>
+nmap <Leader>l [list]
+nnoremap <silent> [list]l :CocList<CR>
+nnoremap <silent> [list]f :CocList -A --tab files<CR>
+nnoremap <silent> [list]g :CocList grep<CR>
