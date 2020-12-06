@@ -11,6 +11,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-commentary'
+Plug 'airblade/vim-gitgutter'
 
 Plug 'mattn/emmet-vim'
 
