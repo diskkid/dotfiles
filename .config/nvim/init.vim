@@ -12,6 +12,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-commentary'
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
 Plug 'mattn/emmet-vim'
 
@@ -81,6 +82,11 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 nnoremap <Leader>r :source $XDG_CONFIG_HOME/nvim/init.vim<CR>
+
+nnoremap [fugitive] <Nop>
+nmap <Leader>g [fugitive]
+nnoremap <silent> [fugitive]g :Git<CR>
+nnoremap <silent> [fugitive]d :Git diff<CR>
 
 " Terminal
 tnoremap <ESC> <C-\><C-n>
