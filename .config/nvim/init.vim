@@ -66,21 +66,21 @@ autocmd QuickFixCmdPost *grep* cwindow
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <Leader>e :edit %%
 
-nmap <silent> <C-n> gt<CR>
-nmap <silent> <C-p> gT<CR>
-nmap <silent> <M-n> :tabm +1<CR>
-nmap <silent> <M-p> :tabm -1<CR>
-nmap <silent> <C-c> :bd %<CR>
+nnoremap <silent> <C-n> gt<CR>
+nnoremap <silent> <C-p> gT<CR>
+nnoremap <silent> <M-n> :tabm +1<CR>
+nnoremap <silent> <M-p> :tabm -1<CR>
+nnoremap <silent> <C-c> :bd %<CR>
 
-nmap <silent> <Leader>n :tabm +1<CR>
-nmap <silent> <Leader>p :tabm -1<CR>
+nnoremap <silent> <Leader>n :tabm +1<CR>
+nnoremap <silent> <Leader>p :tabm -1<CR>
 
-nmap <C-h> <C-w>h
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
-nmap <Leader>r :source $XDG_CONFIG_HOME/nvim/init.vim<CR>
+nnoremap <Leader>r :source $XDG_CONFIG_HOME/nvim/init.vim<CR>
 
 " Terminal
 tnoremap <ESC> <C-\><C-n>
