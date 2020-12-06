@@ -67,6 +67,9 @@ autocmd QuickFixCmdPost *grep* cwindow
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <Leader>e :tabe %%
 
+nnoremap <silent> <S-h> ^
+nnoremap <silent> <S-l> $
+
 nnoremap <silent> <C-n> gt<CR>
 nnoremap <silent> <C-p> gT<CR>
 nnoremap <silent> <M-n> :tabm +1<CR>
