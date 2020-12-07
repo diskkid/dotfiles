@@ -47,16 +47,13 @@ set -x PATH \
   $HOME/.bin \
   $HOME/.local/bin \
   /usr/local/sbin \
+  $PATH
+
+if type -q brew
   # Coreutils for mac
   # equivalent to export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-  /usr/local/opt/coreutils/libexec/gnubin \
-  # Go
-  /usr/local/go/bin \
-  # Rust
-  $HOME/.cargo/bin \
-  $HOME/.ghcup/bin \
-  $HOME/.cabal/bin \
-  $PATH
+  set -x PATH /usr/local/opt/coreutils/libexec/gnubin $PATH
+end
 
 #==============================================================================
 # MANPATH
@@ -66,15 +63,20 @@ set -x MANPATH "/usr/local/opt/coreutils/libexec/gnuman" $MANPATH
 #==============================================================================
 # Go
 #==============================================================================
-if type go > /dev/null 2>&1
+if test -e /usr/local/go/bin/go
+  set -x PATH /usr/local/go/bin $PATH
+end
+
+if type -q go
   set -x GOPATH $HOME/Code/go
-  set -g PATH (go env GOPATH)/bin $PATH
+  set -x PATH (go env GOPATH)/bin $PATH
 end
 
 #==============================================================================
 # Rust
 #==============================================================================
-if type rustc > /dev/null 2>&1
+if type -q rustc
+  set -x PATH $HOME/.cargo/bin $PATH
   set -x RUST_SRC_PATH (rustc --print sysroot)/lib/rustlib/src/rust/src
   set -x CARGO_TARGET_DIR $XDG_DATA_HOME/rust/target
 end
@@ -84,7 +86,7 @@ end
 #==============================================================================
 set -x RBENV_ROOT "$XDG_DATA_HOME/rbenv"
 if test -e "$RBENV_ROOT"
-  set -g PATH "$RBENV_ROOT/bin" $PATH
+  set -x PATH "$RBENV_ROOT/bin" $PATH
   status --is-interactive; and rbenv init - | source
 end
 
@@ -93,16 +95,30 @@ end
 #==============================================================================
 set -x NODENV_ROOT "$XDG_DATA_HOME/nodenv"
 if test -e "$NODENV_ROOT"
-  set -g PATH "$NODENV_ROOT/bin" $PATH
+  set -x PATH "$NODENV_ROOT/bin" $PATH
   status --is-interactive; and source (nodenv init -|psub)
 end
 
-if type nvim > /dev/null 2>&1
+#==============================================================================
+# Haskell
+#==============================================================================
+if test -e $HOME/.ghcup
+  set -x PATH $HOME/.ghcup/bin $PATH
+end
+
+if test -e $HOME/.cabal
+  set -x PATH $HOME/.cabal/bin $PATH
+end
+
+#==============================================================================
+# Aliases
+#==============================================================================
+if type -q nvim
   set -x EDITOR nvim
   alias vim='nvim'
   alias vi='nvim'
 end
 
-if type exa > /dev/null 2>&1
+if type -q exa
   alias ls=exa
 end
