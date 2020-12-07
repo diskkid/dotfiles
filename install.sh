@@ -77,6 +77,7 @@ deploy_config () {
   ln_if_not_exist "$ROOT/.tmux.conf"         "$HOME/.tmux.conf"
   ln_if_not_exist "$ROOT/.zshenv"            "$HOME/.zshenv"
   ln_if_not_exist "$ROOT/.config/zsh"        "$HOME/.config/zsh"
+  ln_if_not_exist "$ROOT/.config/fish"        "$HOME/.config/fish"
   ln_if_not_exist "$ROOT/.config/nvim"       "$HOME/.config/nvim"
   ln_if_not_exist "$ROOT/.config/git"        "$HOME/.config/git"
   ln_if_not_exist "$ROOT/.config/polybar"    "$HOME/.config/polybar"
