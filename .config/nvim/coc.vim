@@ -5,6 +5,7 @@ call coc#add_extension(
       \ 'coc-rust-analyzer',
       \ 'coc-solargraph',
       \ 'coc-tsserver',
+      \ 'coc-lua',
       \ )
 
 
