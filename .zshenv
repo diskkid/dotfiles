@@ -1,3 +1,5 @@
+setopt no_global_rcs
+
 export ZDOTDIR=${HOME}/.config/zsh
 
 # See https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
@@ -24,6 +26,11 @@ path=(
   ${HOME}/.cargo/bin(N-/)
   $path
 )
+
+# Configure homebrew
+if [[ -f /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 #==============================================================================
 # MANPATH
@@ -62,6 +69,16 @@ export NODENV_ROOT="${XDG_DATA_HOME}/nodenv"
 if [ -e "$NODENV_ROOT" ]; then
   PATH="${NODENV_ROOT}/bin:${PATH}"
   eval "$(nodenv init -)"
+fi
+
+#==============================================================================
+# pyenv
+#==============================================================================
+export PYENV_ROOT="${XDG_DATA_HOME}/pyenv"
+if [ -e "$PYENV_ROOT" ]; then
+  PATH="${PYENV_ROOT}/bin:${PATH}"
+  eval "$(pyenv init --path)"
+  eval "$(pyenv init -)"
 fi
 
 export FZF_DEFAULT_OPTS="--layout=reverse --height=50%"

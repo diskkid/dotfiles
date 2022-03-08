@@ -52,6 +52,12 @@ install_node_build () {
     "$HOME/.local/share/nodenv/plugins/node-build"
 }
 
+install_pyenv () {
+  install_latest \
+    https://github.com/pyenv/pyenv.git \
+    "$HOME/.local/share/pyenv"
+}
+
 install_jetbrains_npm () {
   install_latest \
     https://github.com/nodenv/jetbrains-npm.git \
@@ -128,6 +134,7 @@ if [[ $INSTALL != "" ]]; then
   install_ruby_build &
   install_nodenv
   install_node_build &
+  install_pyenv
   install_jetbrains_npm &
   install_tmux_themepack &
   wait
