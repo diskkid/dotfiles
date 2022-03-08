@@ -41,7 +41,8 @@ fi
 #==============================================================================
 # Rust
 #==============================================================================
-if type rustc > /dev/null 2>&1; then
+if [ -e "$HOME/.cargo" ]; then
+  . "$HOME/.cargo/env"
   export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 fi
 
