@@ -9,7 +9,10 @@ Plug 'Shougo/denite.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Themes
 Plug 'chriskempson/base16-vim'
+
 Plug 'tpope/vim-commentary'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
@@ -19,6 +22,9 @@ Plug 'mattn/emmet-vim'
 Plug 'cespare/vim-toml'
 
 Plug 'mattn/vim-goimports'
+
+Plug 'kovisoft/paredit'
+Plug 'vlime/vlime', {'rtp': 'vim/'}
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -26,6 +32,7 @@ source $XDG_CONFIG_HOME/nvim/denite.vim
 source $XDG_CONFIG_HOME/nvim/coc.vim
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+
 colorscheme base16-default-dark
 
 " Indent
@@ -80,10 +87,10 @@ nnoremap <silent> <C-c> :bd %<CR>
 nnoremap <silent> <Leader>n :tabm +1<CR>
 nnoremap <silent> <Leader>p :tabm -1<CR>
 
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <silent> <C-h> <C-w>h
+nnoremap <silent> <C-j> <C-w>j
+nnoremap <silent> <C-k> <C-w>k
+nnoremap <silent> <C-l> <C-w>l
 
 nnoremap <Leader>r :source $XDG_CONFIG_HOME/nvim/init.vim<CR>
 
