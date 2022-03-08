@@ -105,5 +105,12 @@ alias less='less -R'
 
 stty -ixon # Disable ctrl-c and ctrl-q
 
+PATH="$HOME/.local/bin:$PATH"
+
 # Export
 export PATH
+
+# Configure homebrew
+if [[ -f /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
