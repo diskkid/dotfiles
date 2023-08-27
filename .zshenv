@@ -77,7 +77,6 @@ fi
 export PYENV_ROOT="${XDG_DATA_HOME}/pyenv"
 if [ -e "$PYENV_ROOT" ]; then
   PATH="${PYENV_ROOT}/bin:${PATH}"
-  eval "$(pyenv init --path)"
   eval "$(pyenv init -)"
 fi
 
