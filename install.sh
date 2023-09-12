@@ -28,6 +28,10 @@ install_vim_plug () {
   fi
 }
 
+install_starship () {
+  curl -sS https://starship.rs/install.sh | sh -s -- -y -b "$HOME/.local/bin"
+}
+
 install_rbenv () {
   install_latest \
     https://github.com/rbenv/rbenv.git \
@@ -130,6 +134,7 @@ done
 if [[ $INSTALL != "" ]]; then
   install_zplug &
   install_vim_plug &
+  install_starship &
   install_rbenv
   install_ruby_build &
   install_nodenv
