@@ -25,14 +25,6 @@ install_zplug () {
     "$HOME/.local/share/zplug"
 }
 
-install_vim_plug () {
-  local -r DEST=$HOME/.local/share/nvim/site/autoload/plug.vim
-  if [[ ! -e "$DEST" ]]; then
-    curl -fLo "$DEST" --create-dirs \
-      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  fi
-}
-
 install_starship () {
   curl -sS https://starship.rs/install.sh | sh -s -- -y -b "$HOME/.local/bin"
 }
@@ -123,7 +115,6 @@ done
 
 if [[ $INSTALL != "" ]]; then
   install_zplug &
-  install_vim_plug &
   install_starship &
   install_asdf &
 
