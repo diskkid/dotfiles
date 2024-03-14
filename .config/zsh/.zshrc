@@ -33,7 +33,12 @@ SAVEHIST=10000
 touch $HISTFILE
 
 function select_history () {
-  BUFFER=$(history -n 1 -1 | fzf)
+  if type peco > /dev/null 2>&1; then
+    BUFFER=$(history -n 1 -1 | peco)
+  elif type peco > /dev/null 2>&1; then
+    BUFFER=$(history -n 1 -1 | fzf)
+  fi
+
   CURSOR=$#BUFFER
   zle -Rc
 }
