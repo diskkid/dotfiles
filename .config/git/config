@@ -3,3 +3,5 @@
 	email = disk2id@gmail.com
 [init]
 	defaultBranch = main
+[ghq]
+	root = ~/Code
