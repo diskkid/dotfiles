@@ -5,12 +5,17 @@ ROOT="$(cd "${BASH_SOURCE%/*}" || exit 1; pwd)"
 install_latest() {
   local -r SRC_URL="$1"
   local -r DEST_DIR="$2"
+  local -r BRANCH="$3"
 
   if [[ -e "$DEST_DIR" ]]; then
     cd "$DEST_DIR" || exit 1
     git pull
   else
-    git clone --depth=1 "$SRC_URL" "$DEST_DIR"
+    if [[ -z "$BRANCH" ]]; then
+      git clone --depth=1 "$SRC_URL" "$DEST_DIR"
+    else
+      git clone --depth=1 "$SRC_URL" "$DEST_DIR" --branch "$BRANCH"
+    fi
   fi
 }
 
@@ -32,34 +37,11 @@ install_starship () {
   curl -sS https://starship.rs/install.sh | sh -s -- -y -b "$HOME/.local/bin"
 }
 
-install_rbenv () {
+install_asdf () {
   install_latest \
-    https://github.com/rbenv/rbenv.git \
-    "$HOME/.local/share/rbenv"
-}
-
-install_ruby_build () {
-  install_latest \
-    https://github.com/rbenv/ruby-build.git \
-    "$HOME/.local/share/rbenv/plugins/ruby-build"
-}
-
-install_nodenv () {
-  install_latest \
-    https://github.com/nodenv/nodenv.git \
-    "$HOME/.local/share/nodenv"
-}
-
-install_node_build () {
-  install_latest \
-    https://github.com/nodenv/node-build.git \
-    "$HOME/.local/share/nodenv/plugins/node-build"
-}
-
-install_pyenv () {
-  install_latest \
-    https://github.com/pyenv/pyenv.git \
-    "$HOME/.local/share/pyenv"
+    https://github.com/asdf-vm/asdf.git \
+    "$HOME/.local/share/asdf" \
+    v0.14.0
 }
 
 install_jetbrains_npm () {
@@ -100,6 +82,8 @@ deploy_config () {
   ln_if_not_exist "$ROOT/.xsession" "$HOME/.xsession"
   ln_if_not_exist "$ROOT/.xkb"      "$HOME/.xkb"
 
+  ln_if_not_exist "$ROOT/.local/share/diskkid" "$HOME/.local/share/diskkid"
+
   mkdir -p "$HOME/.config/Code/User"
   mkdir -p "$HOME/.config/Code - OSS/User"
   ln_if_not_exist "$ROOT/.config/Code/User/settings.json" "$HOME/.config/Code/User/settings.json"
@@ -135,11 +119,12 @@ if [[ $INSTALL != "" ]]; then
   install_zplug &
   install_vim_plug &
   install_starship &
-  install_rbenv
-  install_ruby_build &
-  install_nodenv
-  install_node_build &
-  install_pyenv
+  install_asdf &
+
+  asdf plugin add ruby
+  asdf plugin add nodejs
+  asdf plugin add python
+
   install_jetbrains_npm &
   install_tmux_themepack &
   wait

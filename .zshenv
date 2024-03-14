@@ -54,30 +54,9 @@ if [ -e "$HOME/.cargo" ]; then
 fi
 
 #==============================================================================
-# rbenv
+# asdf
 #==============================================================================
-export RBENV_ROOT="$XDG_DATA_HOME/rbenv"
-if [ -e "$RBENV_ROOT" ]; then
-  PATH="${RBENV_ROOT}/bin:${PATH}"
-  eval "$(rbenv init -)"
-fi
-
-#==============================================================================
-# nodenv
-#==============================================================================
-export NODENV_ROOT="${XDG_DATA_HOME}/nodenv"
-if [ -e "$NODENV_ROOT" ]; then
-  PATH="${NODENV_ROOT}/bin:${PATH}"
-  eval "$(nodenv init -)"
-fi
-
-#==============================================================================
-# pyenv
-#==============================================================================
-export PYENV_ROOT="${XDG_DATA_HOME}/pyenv"
-if [ -e "$PYENV_ROOT" ]; then
-  PATH="${PYENV_ROOT}/bin:${PATH}"
-  eval "$(pyenv init -)"
-fi
+. "$XDG_DATA_HOME/asdf/asdf.sh"
+fpath=(${XDG_DATA_HOME}/asdf/completions $fpath)
 
 export FZF_DEFAULT_OPTS="--layout=reverse --height=50%"
