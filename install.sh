@@ -50,6 +50,12 @@ install_jetbrains_npm () {
     "$HOME/.local/share/nodenv/lib/node_modules/npm"
 }
 
+install_base16_shell () {
+  install_latest \
+    https://github.com/chriskempson/base16-shell.git \
+    "$HOME/.local/share/base16-shell"
+}
+
 install_tmux_themepack () {
   install_latest \
     https://github.com/jimeh/tmux-themepack.git \
@@ -126,6 +132,7 @@ if [[ $INSTALL != "" ]]; then
   asdf plugin add python
 
   install_jetbrains_npm &
+  install_base16_shell &
   install_tmux_themepack &
   wait
 fi
