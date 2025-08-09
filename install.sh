@@ -41,6 +41,16 @@ install_tmux_themepack () {
     "$HOME/.local/share/tmux-themepack"
 }
 
+install_nvim () {
+  local TEMP_DIR="$(mktemp -d --suffix -diskkid-install-sh)"
+  trap "rm -rf '$TEMP_DIR'" EXIT
+
+  cd "$TEMP_DIR" || exit 1
+  curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
+  chmod u+x nvim-linux-x86_64.appimage
+  mv nvim-linux-x86_64.appimage "$HOME/.local/bin/nvim"
+}
+
 ln_if_not_exist () {
   if [ -e "$2" ]; then
     echo "$2 already exists."
@@ -99,6 +109,8 @@ do
 done
 
 if [[ $INSTALL != "" ]]; then
+  install_nvim
+
   install_zplug &
   install_starship &
 
