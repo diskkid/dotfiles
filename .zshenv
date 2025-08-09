@@ -53,10 +53,4 @@ if [ -e "$HOME/.cargo" ]; then
   export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 fi
 
-#==============================================================================
-# asdf
-#==============================================================================
-. "$XDG_DATA_HOME/asdf/asdf.sh"
-fpath=(${XDG_DATA_HOME}/asdf/completions $fpath)
-
 export FZF_DEFAULT_OPTS="--layout=reverse --height=50%"

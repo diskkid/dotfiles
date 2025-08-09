@@ -29,19 +29,6 @@ install_starship () {
   curl -sS https://starship.rs/install.sh | sh -s -- -y -b "$HOME/.local/bin"
 }
 
-install_asdf () {
-  install_latest \
-    https://github.com/asdf-vm/asdf.git \
-    "$HOME/.local/share/asdf" \
-    v0.14.0
-}
-
-install_jetbrains_npm () {
-  install_latest \
-    https://github.com/nodenv/jetbrains-npm.git \
-    "$HOME/.local/share/nodenv/lib/node_modules/npm"
-}
-
 install_base16_shell () {
   install_latest \
     https://github.com/chriskempson/base16-shell.git \
@@ -80,8 +67,6 @@ deploy_config () {
   ln_if_not_exist "$ROOT/.xsession" "$HOME/.xsession"
   ln_if_not_exist "$ROOT/.xkb"      "$HOME/.xkb"
 
-  ln_if_not_exist "$ROOT/.local/share/diskkid" "$HOME/.local/share/diskkid"
-
   mkdir -p "$HOME/.config/Code/User"
   mkdir -p "$HOME/.config/Code - OSS/User"
   ln_if_not_exist "$ROOT/.config/Code/User/settings.json" "$HOME/.config/Code/User/settings.json"
@@ -116,17 +101,12 @@ done
 if [[ $INSTALL != "" ]]; then
   install_zplug &
   install_starship &
-  install_asdf &
 
-  asdf plugin add ruby
-  asdf plugin add nodejs
-  asdf plugin add python
-
-  install_jetbrains_npm &
   install_base16_shell &
   install_tmux_themepack &
   wait
 fi
+
 if [[ $LINK != "" ]]; then
   deploy_config
 fi
