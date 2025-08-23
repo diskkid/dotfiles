@@ -19,29 +19,29 @@ install_latest() {
   fi
 }
 
-install_zplug () {
+install_zplug() {
   install_latest \
     https://github.com/zplug/zplug \
     "$HOME/.local/share/zplug"
 }
 
-install_starship () {
+install_starship() {
   curl -sS https://starship.rs/install.sh | sh -s -- -y -b "$HOME/.local/bin"
 }
 
-install_base16_shell () {
+install_base16_shell() {
   install_latest \
     https://github.com/chriskempson/base16-shell.git \
     "$HOME/.local/share/base16-shell"
 }
 
-install_tmux_themepack () {
+install_tmux_themepack() {
   install_latest \
     https://github.com/jimeh/tmux-themepack.git \
     "$HOME/.local/share/tmux-themepack"
 }
 
-install_nvim () {
+install_nvim() {
   if [ "$(uname)" == 'Darwin' ]; then
     local TEMP_DIR="$(mktemp -d -t -diskkid-install-sh)"
   else
@@ -55,7 +55,7 @@ install_nvim () {
   mv nvim-linux-x86_64.appimage "$HOME/.local/bin/nvim"
 }
 
-ln_if_not_exist () {
+ln_if_not_exist() {
   if [ -e "$2" ]; then
     echo "$2 already exists."
   else
@@ -63,7 +63,7 @@ ln_if_not_exist () {
   fi
 }
 
-deploy_config () {
+deploy_config() {
   mkdir -p "$HOME/.config"
   ln_if_not_exist "$ROOT/.tmux.conf"         "$HOME/.tmux.conf"
   ln_if_not_exist "$ROOT/.zshenv"            "$HOME/.zshenv"
