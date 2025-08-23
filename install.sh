@@ -42,7 +42,11 @@ install_tmux_themepack () {
 }
 
 install_nvim () {
-  local TEMP_DIR="$(mktemp -d --suffix -diskkid-install-sh)"
+  if [ "$(uname)" == 'Darwin' ]; then
+    local TEMP_DIR="$(mktemp -d -t -diskkid-install-sh)"
+  else
+    local TEMP_DIR="$(mktemp -d --suffix -diskkid-install-sh)"
+  fi
   trap "rm -rf '$TEMP_DIR'" EXIT
 
   cd "$TEMP_DIR" || exit 1
