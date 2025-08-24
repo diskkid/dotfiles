@@ -55,6 +55,10 @@ install_nvim() {
   mv nvim-linux-x86_64.appimage "$HOME/.local/bin/nvim"
 }
 
+install_volta() {
+  curl -L https://get.volta.sh | bash -s -- --skip-setup
+}
+
 ln_if_not_exist() {
   if [ -e "$2" ]; then
     echo "$2 already exists."
@@ -117,6 +121,7 @@ if [[ $INSTALL != "" ]]; then
 
   install_zplug &
   install_starship &
+  install_volta &
 
   install_base16_shell &
   install_tmux_themepack &

@@ -51,6 +51,13 @@ if [ -e "$HOME/.cargo" ]; then
   export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 fi
 
+#==============================================================================
+# JavaScript Runtime
+#==============================================================================
+
+export VOLTA_HOME="$HOME/.local/share/volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
 export FZF_DEFAULT_OPTS="--layout=reverse --height=50%"
 
 if [ -e "$ZDOTDIR/zshenv.local" ]; then
