@@ -54,3 +54,7 @@ if [ -e "$HOME/.cargo" ]; then
 fi
 
 export FZF_DEFAULT_OPTS="--layout=reverse --height=50%"
+
+if [ -e "$ZDOTDIR/zshenv.local" ]; then
+  source "$ZDOTDIR/zshenv.local"
+fi
