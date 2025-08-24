@@ -1,5 +1,3 @@
-setopt no_global_rcs
-
 export ZDOTDIR=${HOME}/.config/zsh
 
 # See https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
@@ -57,4 +55,9 @@ export FZF_DEFAULT_OPTS="--layout=reverse --height=50%"
 
 if [ -e "$ZDOTDIR/zshenv.local" ]; then
   source "$ZDOTDIR/zshenv.local"
+fi
+
+# path_helper hack
+if [ "$(uname)" = 'Darwin' ]; then
+  export BACKUP_PATH="$PATH"
 fi
