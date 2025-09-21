@@ -82,11 +82,6 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { silent = true })
 -- Reload config
 vim.keymap.set("n", "<Leader>R", ":source<CR>", { silent = true })
 
-vim.keymap.set("n", "[fugitive]", "<Nop>")
-vim.keymap.set("n", "<Leader>g", "[fugitive]")
-vim.keymap.set("n", "[fugitive]g", ":Git<CR>")
-vim.keymap.set("n", "[fugitive]d", ":Git diff<CR>")
-
 -- lazy.nvim
 -- https://github.com/folke/lazy.nvim#-installation
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
