@@ -101,20 +101,18 @@ require("lazy").setup({
   {
     'neovim/nvim-lspconfig',
     config = function()
-      local lspconfig = require('lspconfig')
-
       -- C/C++
-      lspconfig.clangd.setup({})
+      vim.lsp.config('clangd', {})
 
       -- Go
-      lspconfig.gopls.setup({})
+      vim.lsp.config('gopls', {})
 
       -- Python
-      lspconfig.pyright.setup({})
-      lspconfig.ruff.setup({})
+      vim.lsp.config('pyright', {})
+      vim.lsp.config('ruff', {})
 
       -- Rust
-      lspconfig.rust_analyzer.setup({})
+      vim.lsp.config('rust_analyzer', {})
 
       vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
       vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
