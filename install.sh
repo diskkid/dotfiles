@@ -26,7 +26,7 @@ install_zplug() {
 }
 
 install_starship() {
-  curl -sS https://starship.rs/install.sh | sh -s -- -y -b "$HOME/.local/bin"
+  curl -sSL https://starship.rs/install.sh | sh -s -- -y -b "$HOME/.local/bin"
 }
 
 install_base16_shell() {
