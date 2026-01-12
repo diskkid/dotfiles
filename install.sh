@@ -44,15 +44,26 @@ install_tmux_themepack() {
 install_nvim() {
   if [ "$(uname)" == 'Darwin' ]; then
     local TEMP_DIR="$(mktemp -d -t -diskkid-install-sh)"
+    local FILE_NAME="nvim-macos-arm64.tar.gz"
   else
     local TEMP_DIR="$(mktemp -d --suffix -diskkid-install-sh)"
+    local FILE_NAME="nvim-linux-x86_64.appimage"
   fi
   trap "rm -rf '$TEMP_DIR'" EXIT
 
+  echo "Installing $FILE_NAME"
+
   cd "$TEMP_DIR" || exit 1
-  curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
-  chmod u+x nvim-linux-x86_64.appimage
-  mv nvim-linux-x86_64.appimage "$HOME/.local/bin/nvim"
+  curl -LO https://github.com/neovim/neovim/releases/latest/download/"$FILE_NAME"
+
+  if [ "$(uname)" == 'Darwin' ]; then
+    tar xf "$FILE_NAME"
+    mv nvim-macos-arm64 "$HOME/.local/share/nvim"
+    ln -s "$HOME/.local/share/nvim/bin/nvim" "$HOME/.local/bin/nvim"
+  else
+    chmod u+x "$FILE_NAME"
+    mv "$FILE_NAME" "$HOME/.local/bin/nvim"
+  fi
 }
 
 install_volta() {
@@ -72,7 +83,7 @@ deploy_config() {
   ln_if_not_exist "$ROOT/.tmux.conf"         "$HOME/.tmux.conf"
   ln_if_not_exist "$ROOT/.zshenv"            "$HOME/.zshenv"
   ln_if_not_exist "$ROOT/.config/zsh"        "$HOME/.config/zsh"
-  ln_if_not_exist "$ROOT/.config/fish"        "$HOME/.config/fish"
+  ln_if_not_exist "$ROOT/.config/fish"       "$HOME/.config/fish"
   ln_if_not_exist "$ROOT/.config/nvim"       "$HOME/.config/nvim"
   ln_if_not_exist "$ROOT/.config/git"        "$HOME/.config/git"
   ln_if_not_exist "$ROOT/.config/polybar"    "$HOME/.config/polybar"
@@ -117,6 +128,7 @@ do
 done
 
 if [[ $INSTALL != "" ]]; then
+  mkdir -p "$HOME/.local/bin"
   install_nvim
 
   install_zplug &
