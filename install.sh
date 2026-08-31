@@ -59,7 +59,7 @@ install_nvim() {
   if [ "$(uname)" == 'Darwin' ]; then
     tar xf "$FILE_NAME"
     mv nvim-macos-arm64 "$HOME/.local/share/nvim"
-    ln -s "$HOME/.local/share/nvim/bin/nvim" "$HOME/.local/bin/nvim"
+    ln_if_not_exist "$HOME/.local/share/nvim/bin/nvim" "$HOME/.local/bin/nvim"
   else
     chmod u+x "$FILE_NAME"
     mv "$FILE_NAME" "$HOME/.local/bin/nvim"
