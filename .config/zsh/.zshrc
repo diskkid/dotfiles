@@ -85,3 +85,5 @@ stty -ixon # Disable ctrl-c and ctrl-q
 
 # Starship
 eval "$(starship init zsh)"
+
+. "$HOME/.local/share/../bin/env"
