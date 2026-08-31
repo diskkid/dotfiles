@@ -52,11 +52,9 @@ if [ -e "$HOME/.cargo" ]; then
 fi
 
 #==============================================================================
-# JavaScript Runtime
+# mise
 #==============================================================================
-
-export VOLTA_HOME="$HOME/.local/share/volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
+eval "$(mise activate zsh)"
 
 export FZF_DEFAULT_OPTS="--layout=reverse --height=50%"
 

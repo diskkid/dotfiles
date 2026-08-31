@@ -29,6 +29,10 @@ install_starship() {
   curl -sSL https://starship.rs/install.sh | sh -s -- -y -b "$HOME/.local/bin"
 }
 
+install_mise() {
+  curl -L https://mise.run | sh
+}
+
 install_base16_shell() {
   install_latest \
     https://github.com/chriskempson/base16-shell.git \
@@ -64,10 +68,6 @@ install_nvim() {
     chmod u+x "$FILE_NAME"
     mv "$FILE_NAME" "$HOME/.local/bin/nvim"
   fi
-}
-
-install_volta() {
-  curl -L https://get.volta.sh | bash -s -- --skip-setup
 }
 
 ln_if_not_exist() {
@@ -133,7 +133,7 @@ if [[ $INSTALL != "" ]]; then
 
   install_zplug &
   install_starship &
-  install_volta &
+  install_mise &
 
   install_base16_shell &
   install_tmux_themepack &
