@@ -100,6 +100,8 @@ deploy_config() {
   mkdir -p "$HOME/.config/Code - OSS/User"
   ln_if_not_exist "$ROOT/.config/Code/User/settings.json" "$HOME/.config/Code/User/settings.json"
   ln_if_not_exist "$ROOT/.config/Code/User/settings.json" "$HOME/.config/Code - OSS/User/settings.json"
+
+  ln_if_not_exist "$ROOT/.config/herdr/config.toml" "$HOME/.config/herdr/config.toml"
 }
 
 usage() {
