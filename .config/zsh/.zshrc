@@ -40,6 +40,13 @@ HISTSIZE=10000
 SAVEHIST=10000
 touch $HISTFILE
 
+fpath=(
+  "$XDG_CONFIG_HOME/zsh/completions"
+  $fpath
+)
+autoload -Uz compinit
+compinit
+
 function select_history () {
   if type fzf > /dev/null 2>&1; then
     BUFFER=$(history -n 1 -1 | fzf)
@@ -64,6 +71,11 @@ if type nvim > /dev/null 2>&1; then
   alias vi=nvim
   alias vim=nvim
 fi
+
+#==============================================================================
+# mise
+#==============================================================================
+eval "$(mise hook-env -s zsh)"
 
 #==============================================================================
 # aliases
